@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICONICA.com</title>
-    <link rel="icon" href="https://postimg.cc/zL2Q2FPd">
+    <link rel="icon" href="https://i.postimg.cc/tCLv9pxd/logo-01.png">
     <link rel="stylesheet" href="02 Descubre.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 </head>
 <body>
     <header> 
@@ -15,18 +16,17 @@
                     <li><a href="01 Clipscharts.html">CLIPSCHARTS</a></li>
                     <li><a href="02 Descubre.html">DESCUBRE</a></li>
                     <li class="logo-space">
-                        <a href="00 Inicio.html"><img src="https://postimg.cc/zL2Q2FPd" alt="Logo"></a>
+                        <a href="00 Inicio.html"><img src="https://i.postimg.cc/tCLv9pxd/logo-01.png" alt="Logo"></a>
                     </li>
                     <li><a href="04 Unete.html">ÚNETE</a></li>
                     <li class="icons">
                         <a href="03 Buscar.html" class="icon-link">
-                            <span>🔍</span>
+                            <span class="material-symbols-outlined">search</span>
                         </a>
-                
                     </li>
                     <li class="icons">
                         <a href="05 Usuario.html" class="icon-link">
-                            <span>🌐</span>
+                            <span class="material-symbols-outlined">account_circle</span>                           
                         </a>
                     </li>
                 </ul>
@@ -44,29 +44,35 @@
                 <section class="seccion-contenido">
                     <div class="cabecera-seccion">
                         <h2>Lo más visto</h2>
-                        <a href="ver-mas-videos.html" class="enlace-ver-mas">Ver más</a>
+                        <a href="ver-mas-videos.html" class="enlace-ver-mas">Ver todo</a>
                     </div>
-        
-                    <div class="grid-videos">
-                        <a href="pagina-video-1.html" class="enlace-video">
-                            <img src="tu-portada-1.jpg" alt="Título del Video 1">
-                        </a>
+                    <div class="carrusel-wrapper">
+                        <button class="flecha-lateral" onclick="document.getElementById('grid-scroll').scrollBy({left: -300, behavior: 'smooth'})">❮❮</button>       
+                        <div class="grid-videos-scroll" id="grid-scroll">
+                            <a href="45 Reproducción Tini UnaNocheMas.html" class="enlace-video"><img src="https://public-rf-upload.minhawebradio.net/251794/news/add1e980dfe1a4c3e5af6d509f835ff6.png" alt="Video 1"></a>
             
-                        <a href="pagina-video-2.html" class="enlace-video">
-                            <img src="tu-portada-2.jpg" alt="Título del Video 2">
-                        </a>
+                            <a href="46 Reproducción Amaia Aralar.html" class="enlace-video"><img src="https://www.mondosonoro.com/wp-content/uploads/2025/10/Amaia.jpg" alt="Video 2"></a>
             
-                        <a href="pagina-video-3.html" class="enlace-video">
-                            <img src="tu-portada-3.jpg" alt="Título del Video 3">
-                        </a>
+                            <a href="47 Reproducción QARE Pala.html" class="enlace-video"><img src="https://i.ytimg.com/vi/gGbgocUZLB8/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCknky9rvHjURBoq_cgJrh2C8ehCA" alt="Video 3"></a>
             
-                        <a href="pagina-video-4.html" class="enlace-video">
-                            <img src="tu-portada-4.jpg" alt="Título del Video 4">
-                        </a>
+                            <a href="48 Reproducción Warthon HijasDelSol.html" class="enlace-video"><img src="https://i.ytimg.com/vi/QgXAzrhPtq8/maxresdefault.jpg" alt="Video 4"></a>
+
+                            <a href="49 Reproducción Shakira Session53.html" class="enlace-video"><img src="https://i.ytimg.com/vi/CocEMWdc7Ck/maxresdefault.jpg" alt="Video 5"></a>
+
+                            <a href="50 Reproducción Ricky LaMordidita.html" class="enlace-video"><img src="https://arc-anglerfish-arc2-prod-infobae.s3.amazonaws.com/public/XG5HXJPGUNBGJLIKZOUJUXANAQ" alt="Video 6"></a>
+                        </div>
+                        <button class="flecha-lateral" onclick="document.getElementById('grid-scroll').scrollBy({left: 300, behavior: 'smooth'})">❯❯</button>
                     </div>
                 </section>
         </div>
         
+<div class="contenedor-Novedades">
+                <section class="video-carousel-rectangulo">
+                    <div class="cabecera-seccion">
+                        <h2>Novedades</h2>
+                        <a href="ver-todo-novedades.html" class="enlace-ver-mas">Ver todo</a>
+                    </div>
+
 
         <section class="video-carousel">
             <div class="section-header">
