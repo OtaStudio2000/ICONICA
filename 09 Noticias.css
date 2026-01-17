@@ -92,6 +92,234 @@
 
 
 
+/* --- Contenedor TITULAR + IMAGENES --- */
+.carrusel-completo {
+    position: relative;
+    width: 100%;
+    height: 30vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden;
+}
+
+/* Contenedor que permite el desplazamiento */
+.slides-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll; /* Permite el scroll horizontal */
+    scroll-behavior: smooth; /* MOVIMIENTO FLUIDO SIN JS */
+    scroll-snap-type: x mandatory; /* Ajuste perfecto a cada imagen */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+.slides-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome/Safari */
+}
+
+/* Cada sección de imagen individual */
+.slide {
+    flex: 0 0 100%; /* Cada slide mide exactamente el 100% del ancho */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    scroll-snap-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen llena la pantalla sin deformarse */
+    display: block;
+}
+
+/* Capa de Texto y Flechas */
+.interfaz {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between; /* Flechas a los lados */
+    align-items: center; /* Todo centrado verticalmente */
+    padding: 0 50px;
+    box-sizing: border-box;
+    pointer-events: none; /* El contenedor no bloquea clics */
+}
+
+.titulo-fijo {
+    color: white;
+    font-size: 8vw; /* Texto muy grande y responsivo */
+    font-weight: 900;
+    letter-spacing: 20px;
+    text-align: center;
+    margin: 0;
+    pointer-events: none; /* El texto no reacciona al ratón */
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.flecha {
+    pointer-events: auto; /* Las flechas sí reaccionan al clic */
+    color: white;
+    text-decoration: none;
+    font-size: 4rem;
+    transition: transform 0.3s;
+}
+
+.flecha:hover {
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+/* --- CAJAS --- */
+
+/* Configuración General */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.contenedor-principal {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio entre cajas */
+}
+
+/* Separación con la imagen de arriba (VIDEOCLIPS) */
+.first-box {
+    margin-top: 60px;
+}
+
+/* Contenedor principal de la caja */
+.caja-noticia {
+    position: relative; /* Permite posicionar el "Ver más" respecto a la caja */
+    background-color: #e3f2fd; /* Azul clarito */
+    border-radius: 25px;
+    padding: 25px;
+    margin-bottom: 25px;
+    transition: background-color 0.3s ease;
+}
+
+/* Efecto HOVER: Toda la caja cambia a naranja */
+.caja-noticia:hover {
+    background-color: #fff3e0; /* Naranja clarito */
+}
+
+.caja-noticia:hover .titulo-video {
+    text-decoration: underline; /* Subraya el título al pasar el ratón */
+}
+
+/* Estilo del enlace que envuelve el contenido */
+.enlace-noticia-completa {
+    display: flex;
+    text-decoration: none;
+    color: inherit;
+    align-items: flex-start; /* Alinea título e imagen arriba horizontalmente */
+}
+
+/* Imagen con tamaño uniforme */
+.imagen-contenedor {
+    flex: 0 0 300px;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 25px;
+}
+
+.imagen-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Texto y Título */
+.contenido-texto {
+    flex: 1;
+}
+
+.titulo-video {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #000;
+    line-height: 1.2;
+}
+
+/* Subrayado del título cuando el ratón está sobre la caja */
+.caja-noticia:hover .titulo-video {
+    text-decoration: underline;
+}
+
+.descripcion-video {
+    margin-top: 15px;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* BOTÓN "VER MÁS" (Dirección distinta) */
+.ver-mas-link {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10; /* Asegura que esté por encima del enlace de la caja */
+    font-size: 0.9rem;
+    color: #e65100;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.ver-mas-link:hover {
+    text-decoration: underline;
+    color: #bf360c; /* Naranja más oscuro al pasar el ratón */
+}    
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .enlace-noticia-completa { flex-direction: column; }
+    .imagen-contenedor { width: 100%; margin-bottom: 15px; }
+    .ver-mas-link { position: static; display: block; margin-bottom: 10px; text-align: right; }
+}
+
+/* --- ADAPTABILIDAD --- */
+
+/* Tablet (Reduce el tamaño de la imagen) */
+@media (max-width: 768px) {
+    .imagen-contenedor {
+        flex: 0 0 180px;
+        height: 120px;
+    }
+    .titulo-video {
+        font-size: 1.2rem;
+    }
+}
+
+/* Móvil (Imagen arriba y texto abajo) */
+@media (max-width: 480px) {
+    .caja-noticia {
+        flex-direction: column; /* Cambia a vertical */
+        text-align: center;
+        padding: 15px;
+    }
+    .imagen-contenedor {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 200px;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .titulo-video {
+        font-size: 1.1rem;
+    }
+}
 
 
 
