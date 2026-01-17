@@ -199,7 +199,78 @@ body {
   background: #ddd;
   padding: 10px 40px;
 }
+/*zona videoclips*/
+.videoclips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 18px 28px;
+  justify-items: center;
+  align-items: center;
+  margin: 0 auto;
+  width: max-content;
+}
 
+.videoclips-section {
+  margin-bottom: 40px; 
+}
+
+.videoclips-title {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 25px;
+  margin-top: 0;
+  width: 100%;
+  z-index: 2;
+  position: relative;
+}
+
+.country-card {
+  display: flex;
+  align-items: center;
+  width: 220px;      /* Ajusta según el largo de la pill */
+  position: relative;
+  justify-content: flex-start;
+}
+.img-placeholder {
+  width: 70px;
+  height: 56px;
+  background: #ccc;
+  border: 1.5px solid #888;
+  z-index: 2;
+  position: relative;
+  margin-right: -22px; /* Hace que la imagen se meta sobre la pill */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.country-pill {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 2px solid #222;
+  border-radius: 0 20px 20px 0;
+  padding: 4px 22px 4px 38px; /* padding izquierdo grande para dejar hueco a la imagen */
+  font-size: 1em;
+  width: 140px;      /* ancho fijo para todas */
+  min-width: 0;
+  text-align: left;
+  box-shadow: 0 0 0 1px #eee;
+  color: #222;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+  margin-left: 0;
+  margin-right: 0;
+  transition: background 0.2s, color 0.2s;
+  overflow: visible;
+}
+
+.country-pill:hover {
+  background: #eee;
+  color: #000;
+  cursor: pointer;
+}
 /* Ajustes Clipcharts */
 .clipcharts {
   display: flex;
@@ -457,6 +528,8 @@ body {
 }
 
 .tag {
+  text-decoration: none;
+  color: #333;
   border: 1px solid var(--border-color);
   padding: 8px;
   border-radius: var(--radius);
