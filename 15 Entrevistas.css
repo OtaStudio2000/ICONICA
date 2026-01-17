@@ -176,11 +176,6 @@ body {
     gap: 20px; /* Espacio entre cajas */
 }
 
-/* Separación con la imagen de arriba (VIDEOCLIPS) */
-.first-box {
-    margin-top: 60px;
-}
-
 /* Contenedor principal de la caja */
 .caja-noticia {
     position: relative; /* Permite posicionar el "Ver más" respecto a la caja */
