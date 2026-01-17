@@ -289,6 +289,135 @@ body {
     .ver-mas-link { position: static; display: block; margin-bottom: 10px; text-align: right; }
 }
 
+
+
+
+
+
+
+/* --- AGENDA --- */
+
+/* Estilo del enlace del Mes/Año */
+.link-mes {
+    text-decoration: none;
+    color: #000;
+    transition: all 0.3s ease; /* Para que el cambio de tamaño y color sea suave */
+    display: inline-block;
+}
+
+.link-mes:hover {
+    color: #fb8c00;          /* Cambia a naranja */
+    text-decoration: underline; /* Se subraya */
+    transform: scale(1.1);   /* Se vuelve un poquito más grande (10%) */
+}
+
+/* Ajustes del Carrusel */
+.agenda-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    width: 100%;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+    padding: 40px 10px;
+}
+
+.agenda-carousel {
+    display: flex;
+    overflow-x: hidden; /* Ocultamos la barra para que solo se mueva por clics */
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+}
+
+.agenda-page {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    display: flex;
+    justify-content: center;
+    position: relative; /* Para posicionar sus propias flechas */
+}
+
+/* Flechas de navegación */
+.agenda-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: bold;
+    z-index: 20;
+    padding: 20px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Estética de la tabla */
+.agenda-table {
+    width: 75%;
+    border-collapse: collapse;
+}
+
+.agenda-table th {
+    padding-bottom: 25px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.dia {
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 20px 0;
+    width: 60px;
+    text-align: center;
+}
+
+.evento {
+    padding-left: 30px;
+    color: #666;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+/* Contenedor que envuelve la agenda */
+.agenda-container {
+    width: 100%;        /* Ocupa todo el ancho disponible */
+    margin-top: 80px;   /* Separación con las cajas de arriba */
+    display: flex;      /* Activa el modo flexbox */
+    justify-content: center; /* Centra el cuadrado blanco horizontalmente */
+    align-items: center;     /* Centra verticalmente si el contenedor tuviera altura */
+    padding: 20px 0;    /* Espacio interno para que no toque bordes en móvil */
+}
+
+/* El cuadrado blanco (Agenda) */
+.agenda-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 40px;
+    width: 90%;          /* En móviles ocupará casi todo el ancho */
+    max-width: 800px;    /* En ordenadores no pasará de 800px */
+    position: relative;
+    overflow: hidden;
+    padding: 40px 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Opcional: una sombra suave para que resalte */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* --- ADAPTABILIDAD --- */
 
 /* Tablet (Reduce el tamaño de la imagen) */
