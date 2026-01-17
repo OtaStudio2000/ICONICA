@@ -1,0 +1,210 @@
+/* HEADER*/ 
+
+/* Rectángulo individual del header */
+.header-container {
+    background-color: #ffeabe; /* CAMBIA AQUÍ EL COLOR */
+    margin: 10px auto;        /* Crea un margen externo para que se vea "suelto" */
+    padding: 15px 30px;       /* Espacio interno del rectángulo */
+    max-width: 1200px;        /* Ancho máximo del rectángulo */
+    border: 1px solid #823f3f;   /* Borde fino */
+}
+
+/* Alineación de los elementos dentro del rectángulo */
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Ajuste del logo */
+.logo-space img {
+    height: 40px;
+}
+
+/* Ajuste de iconos finales */
+.icons {
+    display: flex;
+    gap: 15px;
+    cursor: pointer;
+}
+
+/* Contenedor de los iconos */
+.icons {
+    display: flex;
+    gap: 15px; /* Espacio entre los iconos */
+    align-items: center;
+}
+
+:root {
+  --bg-color: #ffffff;
+  --light-gray: #f0f0f0;
+  --border-color: #ccc;
+  --text-main: #333;
+  --radius: 20px;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  color: var(--text-main);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 5%;
+  border-bottom: 1px solid var(--border-color);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.logo {
+  background: #ddd;
+  padding: 10px 40px;
+}
+
+/* Novedades */
+.novedades {
+  width: 100%;
+  height: 300px;
+  background: var(--light-gray);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+  position: relative;
+}
+
+/* Ranking Pills */
+.ranking-pills {
+  display: flex;
+  justify-content: center;
+  gap: -10px; /* Para el efecto de solapado del dibujo */
+  margin: 40px 0;
+}
+
+.pill {
+  background: var(--light-gray);
+  border: 1px solid var(--border-color);
+  padding: 15px 40px;
+  border-radius: 50px;
+  min-width: 80px;
+  text-align: center;
+}
+
+/* Grids de Contenido (Videoclips, Entrevistas) */
+.videoclips-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.country-card {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.img-placeholder {
+  width: 50px;
+  height: 40px;
+  background: #ddd;
+  margin-right: 10px;
+}
+
+/* Tendencias y Calendario */
+.info-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 60px;
+}
+
+.tags-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.tag {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  border-radius: var(--radius);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.calendar {
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  padding: 30px;
+}
+
+.event-list {
+  list-style: none;
+  padding: 0;
+}
+
+.event-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  gap: 20px;
+}
+
+/* Footer Social */
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 50px 0;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  background: #333;
+  border-radius: 50%;
+}
+
+/* AJUSTES ICONOS GENERAL */
+
+/* Estilo para los enlaces de los iconos */
+.icon-link {
+    text-decoration: none; /* Quita el subrayado */
+    display: flex;
+    align-items: center;
+}
+
+/* Tamaño de las imágenes de los iconos */
+.nav-icon {
+    width: 20px;  /* Ajusta según el tamaño que desees */
+    height: 20px;
+    transition: transform 0.2s; /* Efecto suave al pasar el ratón */
+}
+
+/* Efecto visual al pasar el ratón (hover) */
+.nav-icon:hover {
+    transform: scale(1.1); /* Hace que el icono crezca un poquito */
+}
