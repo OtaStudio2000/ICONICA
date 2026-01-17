@@ -105,6 +105,7 @@
     overflow-x: scroll; /* Permite el scroll horizontal */
     scroll-behavior: smooth; /* MOVIMIENTO FLUIDO SIN JS */
     scroll-snap-type: x mandatory; /* Ajuste perfecto a cada imagen */
+    overflow-y: hidden;
     scrollbar-width: none; /* Oculta la barra en Firefox */
 }
 
