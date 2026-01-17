@@ -140,7 +140,7 @@
     align-items: center; /* Todo centrado verticalmente */
     padding: 0 50px;
     box-sizing: border-box;
-    pointer-events: none; /* El contenedor no bloquea clics */
+    pointer-events: none;
 }
 
 .titulo-fijo {
@@ -150,8 +150,8 @@
     letter-spacing: 20px;
     text-align: center;
     margin: 0;
-    pointer-events: none; /* El texto no reacciona al ratón */
     text-shadow: 0 0 20px rgba(0,0,0,0.5);
+    pointer-events: none;
 }
 
 .flecha {
@@ -176,12 +176,6 @@
   --radius: 20px;
 }
 
-h3 {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  text-align: center;
-  color: var(--text-main);
-}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -218,7 +212,7 @@ body {
 .chart {
   background: #f0f0f0; /* Color de fondo sólido (importante) */
   border: 1.5px solid #ccc;
-  padding: 12px 45px;
+  padding: 12px 65px;
   border-radius: 100px;
   font-weight: bold;
   
@@ -447,8 +441,7 @@ body {
 .caja-calendario-tendencias {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  margin-top: 60px;
+  padding: 40px;
 }
 .tendencias {
   border: none;
@@ -470,6 +463,11 @@ body {
   font-size: 0.9rem;
 }
 
+.tag:hover {
+  background-color: var(--light-gray);
+  cursor: pointer;
+}
+
 .calendar {
   border: 1px solid var(--border-color);
   border-radius: 30px;
@@ -487,6 +485,7 @@ body {
   display: flex;
   gap: 20px;
 }
+
 /* --- CONTENEDOR DEL FOOTER --- */
 .footer-personalizado {
     width: 100vw;           /* Ocupa el 100% del ancho de la ventana */
