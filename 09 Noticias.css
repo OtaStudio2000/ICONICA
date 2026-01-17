@@ -64,10 +64,7 @@
 .grupo-iconos .material-symbols-outlined {
     /* La unidad 'vw' hace que el icono sea más pequeño si la ventana se estrecha */
     font-size: 2vw; 
-    /* Ponemos un tamaño mínimo y máximo para que no desaparezcan ni sean gigantes */
-    min-font-size: 18px; 
-    max-font-size: 30px;
-    
+    /* Ponemos un tamaño mínimo y máximo para que no desaparezcan ni sean gigantes */    
     transition: transform 0.3s ease;
     display: block;
 }

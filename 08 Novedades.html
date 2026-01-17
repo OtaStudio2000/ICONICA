@@ -51,32 +51,35 @@
 
 
     <main>
-        <section class="contenedor-hero-novedades">
-
-            <div class="carrusel">
-                        <button class="flecha-lateral" onclick="document.getElementById('novedades-scroll').scrollBy({left: -300, behavior: 'smooth'})">❮</button>       
-                        <div class="grid-videos-scroll" id="lo-mas-visto-scroll">
-                            <a href="55 Reproducción Yadam PortateBien.html" class="video-fondo activo">
-                                <img src="https://i.ytimg.com/vi/XNgI1XU7JCY/sddefault.jpg?v=685d73b1" alt="Novedades 1">
-                            </a>
-            
-                            <a href="47 Reproducción QARE CakePop.html" class="video-fondo">
-                                <img src="https://i.ytimg.com/vi/YX0_T39l1F4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDcJFfaoaxi-ODSdpqFAc4sseQJ1w" alt="Novedades 2">
-                            </a>
-            
-                            <a href="51 Reproducción EFEMME VroomVroom.html" class="video-fondo">
-                                <img src="https://i1.wp.com/discordiamag.com/wp-content/uploads/2021/03/efemme-1-e1614845835149.jpg?fit=800%2C449" alt="Novedades 3">
-                            </a>            
-                        </div>
-                        <button class="flecha-lateral" onclick="document.getElementById('novedades-scroll').scrollBy({left: 300, behavior: 'smooth'})">❯</button>
-                    </div>
+        <section class="carrusel-completo">
     
-            <div class="capa-contenido">
-                <button class="btn-nav" id="prevBtn">❮</button>
-        
-                <h1 class="titulo-novedades">NOVEDADES</h1>
-        
-                <button class="btn-nav" id="nextBtn">❯</button>
+            <div class="slides-container">
+                <div class="slide" id="img1">
+                    <img src="https://i.ytimg.com/vi/XNgI1XU7JCY/sddefault.jpg?v=685d73b1" alt="Novedad 1">
+                    <div class="interfaz">
+                        <a href="#img3" class="flecha">❮</a>
+                            <h1 class="titulo-fijo">NOVEDADES</h1>
+                        <a href="#img2" class="flecha">❯</a>
+                    </div>
+                </div>
+
+                <div class="slide" id="img2">
+                    <img src="https://i.ytimg.com/vi/YX0_T39l1F4/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDcJFfaoaxi-ODSdpqFAc4sseQJ1w" alt="Novedad 2">
+                    <div class="interfaz">
+                        <a href="#img1" class="flecha">❮</a>
+                            <h1 class="titulo-fijo">NOVEDADES</h1>
+                        <a href="#img3" class="flecha">❯</a>
+                    </div>
+                </div>
+
+                <div class="slide" id="img3">
+                    <img src="https://i1.wp.com/discordiamag.com/wp-content/uploads/2021/03/efemme-1-e1614845835149.jpg?fit=800%2C449" alt="Novedad 3">
+                    <div class="interfaz">
+                        <a href="#img2" class="flecha">❮</a>
+                            <h1 class="titulo-fijo">NOVEDADES</h1>
+                        <a href="#img1" class="flecha">❯</a>
+                    </div>
+                </div>
             </div>
 
         </section>
