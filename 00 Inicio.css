@@ -2,52 +2,60 @@
 
 /* --- CONTENEDOR DEL RECTÁNGULO AMARILLO --- */
 .header-container {
-    background-color: #ffeabe; 
-    margin: 10px 20px;         /* Margen externo para que el rectángulo no toque el borde del navegador */
-    padding: 15px 80px;       /* MARGEN LATERAL INTERNO: Esto separa CLIPSCHARTS e Iconos de los bordes */
-    border: 1px solid #823f3f;
-    box-sizing: border-box;
+  background: #fde9c2;
+  border: 1px solid #b48c6e;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Configuramos la "fila" de la tabla */
 .tabla-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 40px;
-    box-sizing: border-box;
-    list-style: none; /* Elimina puntos si usaste <ul> */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 220px;
+  width: 100%;
 }
 
-/* Cada celda de la tabla */
 .bloque-celda {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  flex: 1;
+  text-align: center;
+  font-family: 'Montserrat', serif;
+  font-size: 2rem;
+  color: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
 }
 
-/* ESTO QUITA EL PUNTO Y PONE LOS ICONOS EN FILA */
+.logo-central img {
+  height: 120px;
+  width: auto;
+  transform: perspective(400px) rotateY(-30deg);
+}
+
 .grupo-iconos {
-    display: flex;       /* Los pone uno al lado del otro */
-    gap: 15px;           /* Espacio entre la lupa y el usuario */
-    justify-content: flex-end; /* Los pega al borde derecho del header */
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  font-size: 2.5rem;
 }
 
-/* Quitamos cualquier decoración de lista que pueda venir de otro lado */
-.grupo-iconos a, .grupo-iconos span {
-    text-decoration: none;
-    list-style-type: none; /* Asegura que no haya puntos */
-    display: flex;
-    align-items: center;
+.espaciador {
+  flex: 1;
+  pointer-events: none;
+  background: transparent;
 }
 
 /* Iconos de Google Material */
 .material-symbols-outlined {
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
 }
 
 /* Bloque 5: Contenedor de iconos */
@@ -66,14 +74,6 @@
     font-size: 2vw;  
     transition: transform 0.3s ease;
     display: block;
-}
-
-/* Bloque del logo: le damos un poco más de importancia si quieres */
-.logo-central img {
-    height: auto;
-    max-width: 90%;         /* El logo también se hace pequeño con la celda */
-    width: 120px;           /* Tamaño máximo */
-    align-content: center;
 }
 
 /* Animación de agrandado (Hover) */
