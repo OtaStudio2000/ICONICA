@@ -110,65 +110,6 @@ header nav ul li a {
     text-align: left;
 }
 
-/* Carrusel */
-.carrusel-lo-mas-visto {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.seccion-contenido-lo-mas-visto {
-    max-width: 1400px; /* Aumentamos el ancho máximo */
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.grid-videos-scroll-lo-mas-visto {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 25px; /* Más espacio entre videos */
-    padding: 20px 0;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
-}
-
-/* Ocultar barra de scroll en Chrome/Safari */
-.grid-videos-scroll-lo-mas-visto::-webkit-scrollbar {
-    display: none;
-}
-
-/* Estilo para los botones de flecha */
-.flecha-lateral {
-    font-size: 40px; /* Flechas más grandes */
-    color: #333;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 10;
-}
-
-.flecha-lateral:hover {
-    transform: scale(1.2);
-}
-
-/* Estilo para los emoticonos/flechas laterales */
-.flecha-lateral {
-    text-decoration: none;
-    color: #333;
-    font-size: 24px;     /* Tamaño de la flecha */
-    font-weight: bold;
-    padding: 10px;
-    transition: transform 0.2s, color 0.2s;
-}
-
-.flecha-lateral:hover {
-    color: #000;
-    transform: scale(1.2); /* Crece un poco al pasar el ratón */
-}
 
 
 /* NOVEDADES */
@@ -192,20 +133,27 @@ header nav ul li a {
     text-align: left;
 }
 
+
+
+
+
+
+
+
 /* Carrusel */
-.carrusel-novedades {
+.carrusel {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.seccion-contenido-novedades {
+.seccion-contenido {
     max-width: 1400px; /* Aumentamos el ancho máximo */
     margin: 0 auto;
     padding: 0 40px;
 }
 
-.grid-videos-scroll-novedades {
+.grid-videos-scroll {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
@@ -218,41 +166,9 @@ header nav ul li a {
 }
 
 /* Ocultar barra de scroll en Chrome/Safari */
-.grid-videos-scroll-novedades::-webkit-scrollbar {
+.grid-videos-scroll::-webkit-scrollbar {
     display: none;
 }
-
-/* Estilo para los botones de flecha */
-.flecha-lateral-novedades {
-    font-size: 40px; /* Flechas más grandes */
-    color: #333;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 10;
-}
-
-.flecha-lateral-novedades:hover {
-    transform: scale(1.2);
-}
-
-/* Estilo para los emoticonos/flechas laterales */
-.flecha-lateral-novedades {
-    text-decoration: none;
-    color: #333;
-    font-size: 24px;     /* Tamaño de la flecha */
-    font-weight: bold;
-    padding: 10px;
-    transition: transform 0.2s, color 0.2s;
-}
-
-.flecha-lateral-novedades:hover {
-    color: #000;
-    transform: scale(1.2); /* Crece un poco al pasar el ratón */
-}
-
-
 
 /* Grid para las imágenes */
 .grid-videos {
@@ -283,7 +199,7 @@ header nav ul li a {
     opacity: 0.8; /* Se oscurece un poco al poner el ratón encima */
 }
 
-/* Contenedor que alinea el título y el Ver más */
+/* Contenedor que alinea el título y el Ver todo */
 .cabecera-seccion {
     display: flex;
     justify-content: space-between; /* Empuja los elementos a los extremos */
@@ -297,7 +213,7 @@ header nav ul li a {
     font-weight: bold;
 }
 
-/* Estilo para el texto "Ver todo" */
+/* Estilo texto "Ver todo" */
 .enlace-ver-todo {
     text-decoration: none;         /* Quita el subrayado */
     color: #666;                   /* Color grisáceo */
@@ -328,6 +244,35 @@ header nav ul li a {
     display: block;
 }
 
+/* Estilo botones de flecha */
+.flecha-lateral {
+    font-size: 40px; /* Flechas más grandes */
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.flecha-lateral:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo flechas laterales */
+.flecha-lateral {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;     /* Tamaño de la flecha */
+    font-weight: bold;
+    padding: 10px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.flecha-lateral:hover {
+    color: #000;
+    transform: scale(1.2); /* Crece un poco al pasar el ratón */
+}
 
 
 
