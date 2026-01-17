@@ -177,11 +177,14 @@
   --radius: 20px;
 }
 
-
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   color: var(--text-main);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', Arial, sans-serif;
 }
 
 /* Navbar */
@@ -318,21 +321,49 @@ body {
 }
 
 /* ajustes carruseles */
-.contenedor-criticas {
-    background-color: #bcff9d;
-    padding: 40px 20px;
-    margin: 20px 0;
-    border-radius: 0;
-    width: 100%;
-}
+
+/* --- ENTREVISTAS --- */
 .contenedor-entrevistas {
-    background-color: #9dfcff;
-    padding: 40px 20px;
-    margin: 20px 0;
-    border-radius: 0;
-    width: 100%;
+    background-color: #9dfcff; /* Color de fondo del rectángulo */
+    padding: 40px 20px;       /* Espacio interno */
+    margin: 20px 0;           /* Espacio entre otras secciones */
+    border-radius: 0;         /* Bordes totalmente rectos */
+    width: 100%;              /* Ocupa todo el ancho */
 }
 
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-entrevistas {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-entrevistas h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+/* --- CRÍTICAS --- */
+.contenedor-criticas {
+    background-color: #f49dff; /* Color de fondo del rectángulo */
+    padding: 40px 20px;       /* Espacio interno */
+    margin: 20px 0;           /* Espacio entre otras secciones */
+    border-radius: 0;         /* Bordes totalmente rectos */
+    width: 100%;              /* Ocupa todo el ancho */
+}
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-criticas {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-criticas h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
 /* Carrusel */
 .carrusel {
     display: flex;
@@ -350,13 +381,16 @@ body {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    gap: 25px; /* Más espacio entre videos */
+    gap: 25px;
     padding: 20px 0;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
+    width: 100%;
+    margin: 0 auto;
     scroll-snap-type: x mandatory;
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    box-sizing: border-box;
 }
+
 
 /* Ocultar barra de scroll en Chrome/Safari */
 .grid-videos-scroll::-webkit-scrollbar {
@@ -372,12 +406,15 @@ body {
 
 /* Estilo de los enlaces/imágenes */
 .enlace-video {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Mantiene formato rectangular de video */
+    flex: 0 0 23vw;
+    min-width: 220px;
+    max-width: 320px;
+    aspect-ratio: 16/9;
+    background-color: #f0f0f0;
     overflow: hidden;
-    background-color: #ddd; /* Color de carga si no hay imagen */
+    scroll-snap-align: start;
 }
+
 
 .enlace-video img {
     width: 100%;
@@ -484,8 +521,6 @@ body {
     'opsz' 24
 }
 
-
-
 /* --- AJUSTES ICONOS GENERAL --- */
 
 /* Estilo para los enlaces de los iconos */
@@ -508,23 +543,25 @@ body {
 }
 
 
-
 /* Tendencias y Calendario */
 .caja-calendario-tendencias {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 3%;
+  padding-bottom: 3%;
 }
 .tendencias {
   border: none;
   border-radius: 30px;
-  padding: 30px;
+  padding: 0 30px 30px 30px; /* Solo padding lateral y abajo */
 }
 .tags-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  padding: 40px;
+  padding: 20px 40px 0 0px;
 }
 
 .tag {
@@ -542,10 +579,11 @@ body {
   cursor: pointer;
 }
 
+
 .calendar {
   border: 1px solid var(--border-color);
   border-radius: 30px;
-  padding: 30px;
+  padding: 0 30px 30px 30px; /* Solo padding lateral y abajo */
 }
 
 .event-list {
@@ -662,13 +700,10 @@ html {
 
 /* Estilos para tablets */
 @media (max-width: 1024px) {
-    .enlace-video {
-        flex: 0 0 calc(50% - 20px); /* Pasa de 4 videos a 2 por fila */
     }
     .grid-hashtags {
         grid-template-columns: repeat(2, 1fr); /* Tendencias en 2 columnas */
     }
-}
 
 /* Estilos para móviles */
 @media (max-width: 768px) {
@@ -687,10 +722,7 @@ html {
     .contenedor-titulo-principal h1 {
         font-size: 40px; /* Reduce el título "DESCUBRE" para que no se corte */
     }
-    .enlace-video {
-        flex: 0 0 100%; /* Un video por fila */
-    }
-    
+
     .cabecera-seccion {
         flex-direction: column; /* El título y "Ver todo" se apilan verticalmente */
         align-items: flex-start;
@@ -717,3 +749,66 @@ html {
         padding: 10px 20px; /* Menos margen en los lados para ganar espacio */
     }
 }
+/* ...tu CSS actual... */
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .videoclips-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 14px 10px;
+  }
+  .country-card {
+    width: 98vw;
+    max-width: 340px;
+  }
+  .img-placeholder {
+    width: 60px;
+    height: 48px;
+  }
+  .country-pill {
+    width: 120px;
+    font-size: 0.98em;
+    padding: 4px 12px 4px 32px;
+  }
+  .caja-calendario-tendencias {
+    grid-template-columns: 1fr;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+  }
+  .tendencias, .calendar {
+    padding: 0 10px 20px 10px;
+  }
+  .tags-grid {
+    grid-template-columns: 1fr 1fr;
+    padding: 10px 0 0 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .videoclips-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 12px 0;
+  }
+  .country-card {
+    width: 98vw;
+    max-width: 98vw;
+  }
+  .caja-calendario-tendencias {
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 4vw;
+    padding-bottom: 4vw;
+  }
+  .tags-grid {
+    grid-template-columns: 1fr;
+    padding: 6px 0 0 0;
+  }
+  .tendencias h3, .calendar h3 {
+    font-size: 1.1em;
+  }
+}
+
