@@ -1,0 +1,270 @@
+/* --- HEADER ---*/ 
+
+/* --- CONTENEDOR DEL RECTÁNGULO AMARILLO --- */
+.header-container {
+    background-color: #ffeabe; 
+    margin: 10px 20px;         /* Margen externo para que el rectángulo no toque el borde del navegador */
+    padding: 15px 80px;       /* MARGEN LATERAL INTERNO: Esto separa CLIPSCHARTS e Iconos de los bordes */
+    border: 1px solid #823f3f;
+    box-sizing: border-box;
+}
+
+/* --- LISTA DE NAVEGACIÓN --- */
+.nav-list {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Permite que el logo se oriente al centro absoluto */
+    width: 100%;
+}
+
+/* --- GRUPOS LATERALES (Izquierda y Derecha) --- */
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 150px; /* Espacio entre CLIPSCHARTS y DESCUBRE */
+    flex: 1;   /* Hace que ambos lados ocupen el mismo espacio para centrar el logo */
+}
+
+.group-right {
+    justify-content: flex-end; /* Empuja ÚNETE y los iconos a la derecha */
+    gap: 225px; /* Espacio entre ÚNETE y el bloque de iconos */
+}
+
+/* --- LOGO EN EL CENTRO ABSOLUTO --- */
+.logo-space {
+    flex: 0 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Lo clava en el centro exacto de la pantalla */
+}
+
+.logo-space img {
+    height: 40px;
+    display: block;
+}
+
+/* --- BLOQUE DE ICONOS (Lupa y Usuario) --- */
+.contenedor-iconos {
+    display: flex;
+    gap: 15px; /* Los iconos están más juntos entre sí */
+    align-items: center;
+}
+
+/* --- ANIMACIONES (HOVER) --- */
+.nav-list a, .material-symbols-outlined {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Efecto de agrandar al pasar el ratón */
+.nav-list a:hover, 
+.icon-link:hover span {
+    transform: scale(1.5);
+}
+
+.material-symbols-outlined {
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- AJUSTES ICONOS COMO IMAGEN --- */
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+
+
+
+/* --- AJUSTES ICONOS GENERAL --- */
+
+/* Estilo para los enlaces de los iconos */
+.icon-link {
+    text-decoration: none; /* Quita el subrayado */
+    display: flex;
+    align-items: center;
+}
+
+/* Tamaño de las imágenes de los iconos */
+.nav-icon {
+    width: 20px;  /* Ajusta según el tamaño que desees */
+    height: 20px;
+    transition: transform 0.2s; /* Efecto suave al pasar el ratón */
+}
+
+/* Efecto visual al pasar el ratón (hover) */
+.nav-icon:hover {
+    transform: scale(1.1); /* Hace que el icono crezca un poquito */
+}
+
+
+
+
+
+/* --- BOTÓN VOLVER ARRIBA --- */
+.boton-subir {
+    position: fixed;         /* Se queda fijo en la pantalla */
+    bottom: 30px;            /* Distancia desde abajo */
+    right: 30px;             /* Distancia desde la derecha */
+    width: 50px;
+    height: 50px;
+    background-color: #333;  /* Color del botón */
+    color: #fff;             /* Color de la flecha */
+    border-radius: 50%;      /* Forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1000;           /* Asegura que esté por encima de todo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.boton-subir:hover {
+    background-color: #000;  /* Se oscurece al pasar el ratón */
+    transform: translateY(-5px); /* Sube un poquito al pasar el ratón */
+}
+
+/* Ajuste del icono dentro del botón */
+.boton-subir .material-symbols-outlined {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* EFECTO SUAVE AL SUBIR */
+html {
+    scroll-behavior: smooth; /* Hace que toda la página suba suavemente, no de golpe */
+}
+
+
+
+
+
+/* --- CONTENEDOR DEL FOOTER --- */
+.footer-personalizado {
+    width: 100%;
+    padding: 40px 0 20px 0;
+    margin-top: 50px;
+    background-color: #ff91fd; /* CAMBIA AQUÍ EL COLOR DE FONDO */
+    border-top: 1px solid #ddd; /* Línea sutil superior */
+}
+
+.contenido-centrado-footer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+/* --- LOGOS DE REDES SOCIALES --- */
+.redes-sociales {
+    display: flex;
+    gap: 25px; /* Espacio entre logos */
+    margin-bottom: 30px;
+}
+
+.enlace-social img {
+    width: 40px; /* Tamaño de los logos */
+    height: 40px;
+    filter: grayscale(100%); /* Efecto blanco y negro opcional */
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.enlace-social img:hover {
+    transform: scale(1.2); /* Crece al pasar el ratón */
+    filter: grayscale(0%); /* Recupera el color original al pasar el ratón */
+}
+
+/* --- TEXTO DE DERECHOS RESERVADOS --- */
+.info-legal {
+    width: 100%; /* Ocupa todo el ancho para poder alinear a la izquierda */
+    text-align: left; /* Alinea el texto a la izquierda */
+    border-top: 1px solid #eee; /* Línea divisoria muy fina */
+    padding-top: 20px;
+}
+
+.info-legal p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Reset básico para evitar espacios en blanco en los bordes */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal indeseado */
+}
+
+
+
+
+/* ---ADAPTACIÓN A OTROS FORMATOS--- */
+
+/* Estilos para tablets */
+@media (max-width: 1024px) {
+    .enlace-video {
+        flex: 0 0 calc(50% - 20px); /* Pasa de 4 videos a 2 por fila */
+    }
+    .grid-hashtags {
+        grid-template-columns: repeat(2, 1fr); /* Tendencias en 2 columnas */
+    }
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .grid-hashtags {
+        grid-template-columns: repeat(2, 1fr); /* En móviles pasa a 2 columnas */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-hashtags {
+        grid-template-columns: 1fr; /* En móviles muy pequeños 1 columna */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-titulo-principal h1 {
+        font-size: 40px; /* Reduce el título "DESCUBRE" para que no se corte */
+    }
+    .enlace-video {
+        flex: 0 0 100%; /* Un video por fila */
+    }
+    
+    .cabecera-seccion {
+        flex-direction: column; /* El título y "Ver todo" se apilan verticalmente */
+        align-items: flex-start;
+    }
+}

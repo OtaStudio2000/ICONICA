@@ -1,41 +1,80 @@
-/* HEADER*/ 
+/* --- HEADER ---*/ 
 
-/* Rectángulo individual del header */
+/* --- CONTENEDOR DEL RECTÁNGULO AMARILLO --- */
 .header-container {
-    background-color: #ffeabe; /* CAMBIA AQUÍ EL COLOR */
-    margin: 10px auto;        /* Crea un margen externo para que se vea "suelto" */
-    padding: 15px 30px;       /* Espacio interno del rectángulo */
-    max-width: 1200px;        /* Ancho máximo del rectángulo */
-    border: 1px solid #823f3f;   /* Borde fino */
+    background-color: #ffeabe; 
+    margin: 10px 20px;         /* Margen externo para que el rectángulo no toque el borde del navegador */
+    padding: 15px 80px;       /* MARGEN LATERAL INTERNO: Esto separa CLIPSCHARTS e Iconos de los bordes */
+    border: 1px solid #823f3f;
+    box-sizing: border-box;
 }
 
-/* Alineación de los elementos dentro del rectángulo */
-header nav ul {
+/* --- LISTA DE NAVEGACIÓN --- */
+.nav-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; 
     align-items: center;
     list-style: none;
     margin: 0;
     padding: 0;
+    position: relative; /* Permite que el logo se oriente al centro absoluto */
+    width: 100%;
 }
 
-header nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 600;
+/* --- GRUPOS LATERALES (Izquierda y Derecha) --- */
+.nav-group {
+    display: flex;
+    align-items: center;
+    gap: 150px; /* Espacio entre CLIPSCHARTS y DESCUBRE */
+    flex: 1;   /* Hace que ambos lados ocupen el mismo espacio para centrar el logo */
 }
 
-/* Ajuste del logo */
+.group-right {
+    justify-content: flex-end; /* Empuja ÚNETE y los iconos a la derecha */
+    gap: 225px; /* Espacio entre ÚNETE y el bloque de iconos */
+}
+
+/* --- LOGO EN EL CENTRO ABSOLUTO --- */
+.logo-space {
+    flex: 0 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Lo clava en el centro exacto de la pantalla */
+}
+
 .logo-space img {
     height: 40px;
+    display: block;
 }
 
-/* Ajuste de iconos finales */
-.icons {
+/* --- BLOQUE DE ICONOS (Lupa y Usuario) --- */
+.contenedor-iconos {
     display: flex;
-    gap: 15px;
-    cursor: pointer;
+    gap: 15px; /* Los iconos están más juntos entre sí */
+    align-items: center;
 }
+
+/* --- ANIMACIONES (HOVER) --- */
+.nav-list a, .material-symbols-outlined {
+    display: inline-block;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: #333;
+}
+
+/* Efecto de agrandar al pasar el ratón */
+.nav-list a:hover, 
+.icon-link:hover span {
+    transform: scale(1.5);
+}
+
+.material-symbols-outlined {
+    font-size: 24px;
+    vertical-align: middle;
+}
+
+
+
 
 /* Contenedor de los iconos */
 .icons {
