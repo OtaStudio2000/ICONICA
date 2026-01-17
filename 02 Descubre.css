@@ -134,11 +134,51 @@ header nav ul li a {
 }
 
 
+/* ENTREVISTAS */
+.contenedor-entrevistas {
+    background-color: #9dfcff; /* Color de fondo del rectángulo */
+    padding: 40px 20px;       /* Espacio interno */
+    margin: 20px 0;           /* Espacio entre otras secciones */
+    border-radius: 0;         /* Bordes totalmente rectos */
+    width: 100%;              /* Ocupa todo el ancho */
+}
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-entrevistas {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-entrevistas h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
 
 
+/* CRÍTICAS */
+.contenedor-criticas {
+    background-color: #f49dff; /* Color de fondo del rectángulo */
+    padding: 40px 20px;       /* Espacio interno */
+    margin: 20px 0;           /* Espacio entre otras secciones */
+    border-radius: 0;         /* Bordes totalmente rectos */
+    width: 100%;              /* Ocupa todo el ancho */
+}
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-criticas {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-criticas h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
 
 
-
+/* AJUSTES GENERALES DE LAS SECCIONES */
 
 /* Carrusel */
 .carrusel {
