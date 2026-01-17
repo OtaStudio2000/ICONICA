@@ -513,18 +513,20 @@ body {
 .caja-calendario-tendencias {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 40px;
+  padding-left: 20%;
+  padding-right: 20%;
+  padding-top: 3%;
 }
 .tendencias {
   border: none;
   border-radius: 30px;
-  padding: 30px;
+  padding: 0 30px 30px 30px; /* Solo padding lateral y abajo */
 }
 .tags-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
-  padding: 40px;
+  padding: 20px 40px 0 0px;
 }
 
 .tag {
@@ -542,10 +544,11 @@ body {
   cursor: pointer;
 }
 
+
 .calendar {
   border: 1px solid var(--border-color);
   border-radius: 30px;
-  padding: 30px;
+  padding: 0 30px 30px 30px; /* Solo padding lateral y abajo */
 }
 
 .event-list {
