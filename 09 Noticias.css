@@ -261,32 +261,7 @@ html, body {
     }
 }
 
-/* Estilos para móviles */
-@media (max-width: 768px) {
-    .grid-hashtags {
-        grid-template-columns: repeat(2, 1fr); /* En móviles pasa a 2 columnas */
-    }
-}
 
-@media (max-width: 480px) {
-    .grid-hashtags {
-        grid-template-columns: 1fr; /* En móviles muy pequeños 1 columna */
-    }
-}
-
-@media (max-width: 480px) {
-    .contenedor-titulo-principal h1 {
-        font-size: 40px; /* Reduce el título "DESCUBRE" para que no se corte */
-    }
-    .enlace-video {
-        flex: 0 0 100%; /* Un video por fila */
-    }
-    
-    .cabecera-seccion {
-        flex-direction: column; /* El título y "Ver todo" se apilan verticalmente */
-        align-items: flex-start;
-    }
-}
 
 /* --- REGLA PARA PANTALLAS PEQUEÑAS HEADER --- */
 @media (max-width: 600px) {
