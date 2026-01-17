@@ -45,7 +45,12 @@ header nav ul li a {
 }
 
 
-/*BODY*/
+
+
+
+
+
+/* TITULO DE SECCIÓN */
 
 /* Espacio del título */
 .contenedor-titulo-principal {
@@ -68,11 +73,13 @@ header nav ul li a {
 
 
 
-/* LO MAS VISTO */
 
-/* Rectángulo independiente para "Lo más visto" */
+
+/* CONTENDEDORES INDIVIDUALES*/
+
+/* LO MAS VISTO */
 .contenedor-lo-mas-visto {
-    background-color: #f9f9f9; /* Color de fondo del rectángulo */
+    background-color: #ff9d9d; /* Color de fondo del rectángulo */
     padding: 40px 20px;       /* Espacio interno */
     margin: 20px 0;           /* Espacio entre otras secciones */
     border-radius: 0;         /* Bordes totalmente rectos */
@@ -80,16 +87,172 @@ header nav ul li a {
 }
 
 /* Contenedor interno para centrar el contenido */
-.seccion-contenido {
+.seccion-contenido-lo-mas-visto {
     max-width: 1200px;
     margin: 0 auto;
 }
 
-.seccion-contenido h2 {
+.seccion-contenido-lo-mas-visto h2 {
     font-size: 24px;
     margin-bottom: 20px;
     text-align: left;
 }
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-lo-mas-visto {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-lo-mas-visto h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Carrusel */
+.carrusel-lo-mas-visto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.seccion-contenido-lo-mas-visto {
+    max-width: 1400px; /* Aumentamos el ancho máximo */
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.grid-videos-scroll-lo-mas-visto {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 25px; /* Más espacio entre videos */
+    padding: 20px 0;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+/* Ocultar barra de scroll en Chrome/Safari */
+.grid-videos-scroll-lo-mas-visto::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilo para los botones de flecha */
+.flecha-lateral {
+    font-size: 40px; /* Flechas más grandes */
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.flecha-lateral:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo para los emoticonos/flechas laterales */
+.flecha-lateral {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;     /* Tamaño de la flecha */
+    font-weight: bold;
+    padding: 10px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.flecha-lateral:hover {
+    color: #000;
+    transform: scale(1.2); /* Crece un poco al pasar el ratón */
+}
+
+
+/* NOVEDADES */
+.contenedor-novedades {
+    background-color: #bcff9d; /* Color de fondo del rectángulo */
+    padding: 40px 20px;       /* Espacio interno */
+    margin: 20px 0;           /* Espacio entre otras secciones */
+    border-radius: 0;         /* Bordes totalmente rectos */
+    width: 100%;              /* Ocupa todo el ancho */
+}
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-novedades {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-novedades h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Carrusel */
+.carrusel-novedades {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.seccion-contenido-novedades {
+    max-width: 1400px; /* Aumentamos el ancho máximo */
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.grid-videos-scroll-novedades {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 25px; /* Más espacio entre videos */
+    padding: 20px 0;
+    width: 100%; /* Ocupa todo el ancho del contenedor */
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+/* Ocultar barra de scroll en Chrome/Safari */
+.grid-videos-scroll-novedades::-webkit-scrollbar {
+    display: none;
+}
+
+/* Estilo para los botones de flecha */
+.flecha-lateral-novedades {
+    font-size: 40px; /* Flechas más grandes */
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.flecha-lateral-novedades:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo para los emoticonos/flechas laterales */
+.flecha-lateral-novedades {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;     /* Tamaño de la flecha */
+    font-weight: bold;
+    padding: 10px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.flecha-lateral-novedades:hover {
+    color: #000;
+    transform: scale(1.2); /* Crece un poco al pasar el ratón */
+}
+
+
 
 /* Grid para las imágenes */
 .grid-videos {
@@ -134,8 +297,8 @@ header nav ul li a {
     font-weight: bold;
 }
 
-/* Estilo para el texto "Ver más" */
-.enlace-ver-mas {
+/* Estilo para el texto "Ver todo" */
+.enlace-ver-todo {
     text-decoration: none;         /* Quita el subrayado */
     color: #666;                   /* Color grisáceo */
     font-size: 14px;
@@ -143,39 +306,9 @@ header nav ul li a {
     transition: color 0.3s;
 }
 
-.enlace-ver-mas:hover {
+.enlace-ver-todo:hover {
     color: #000;                   /* Se oscurece al pasar el ratón */
     text-decoration: underline;    /* Opcional: aparece subrayado al pasar el ratón */
-}
-
-/* Carrusel */
-.carrusel-wrapper {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.seccion-contenido {
-    max-width: 1400px; /* Aumentamos el ancho máximo */
-    margin: 0 auto;
-    padding: 0 40px;
-}
-
-.grid-videos-scroll {
-    display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    gap: 25px; /* Más espacio entre videos */
-    padding: 20px 0;
-    width: 100%; /* Ocupa todo el ancho del contenedor */
-    scroll-snap-type: x mandatory;
-    -ms-overflow-style: none; 
-    scrollbar-width: none; 
-}
-
-/* Ocultar barra de scroll en Chrome/Safari */
-.grid-videos-scroll::-webkit-scrollbar {
-    display: none;
 }
 
 .enlace-video {
@@ -195,35 +328,7 @@ header nav ul li a {
     display: block;
 }
 
-/* Estilo para los botones de flecha */
-.flecha-lateral {
-    font-size: 40px; /* Flechas más grandes */
-    color: #333;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 10;
-}
 
-.flecha-lateral:hover {
-    transform: scale(1.2);
-}
-
-/* Estilo para los emoticonos/flechas laterales */
-.flecha-lateral {
-    text-decoration: none;
-    color: #333;
-    font-size: 24px;     /* Tamaño de la flecha */
-    font-weight: bold;
-    padding: 10px;
-    transition: transform 0.2s, color 0.2s;
-}
-
-.flecha-lateral:hover {
-    color: #000;
-    transform: scale(1.2); /* Crece un poco al pasar el ratón */
-}
 
 
 
@@ -239,6 +344,7 @@ header nav ul li a {
     'GRAD' 0,
     'opsz' 24
 }
+
 
 
 
@@ -263,4 +369,3 @@ header nav ul li a {
 .nav-icon:hover {
     transform: scale(1.1); /* Hace que el icono crezca un poquito */
 }
-
