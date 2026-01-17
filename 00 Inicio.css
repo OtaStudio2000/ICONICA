@@ -52,12 +52,12 @@
 
 /* Bloque 5: Contenedor de iconos */
 .grupo-iconos {
-    display: flex !important;
-    flex-direction: row !important; /* Siempre en horizontal */
+    display: flex ;
+    flex-direction: row ; /* Siempre en horizontal */
     align-items: center;
     justify-content: flex-end;
     gap: 1vw; /* El espacio entre ellos también se encoge */
-    list-style: none !important;
+    list-style: none ;
 }
 
 /* Tamaño elástico de los iconos */
@@ -73,6 +73,7 @@
     height: auto;
     max-width: 90%;         /* El logo también se hace pequeño con la celda */
     width: 120px;           /* Tamaño máximo */
+    align-content: center;
 }
 
 /* Animación de agrandado (Hover) */
@@ -93,7 +94,7 @@
 .carrusel-completo {
     position: relative;
     width: 100%;
-    height: 50vh; /* Ocupa toda la altura de la ventana */
+    height: 30vh; /* Ocupa toda la altura de la ventana */
     overflow: hidden;
 }
 
@@ -202,12 +203,13 @@ h1, h2, h3, h4, h5, h6 {
   background: #ddd;
   padding: 10px 40px;
 }
+
 /*zona videoclips*/
 .videoclips-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 18px 28px;
+  gap: 38px 78px;
   justify-items: center;
   align-items: center;
   margin: 0 auto;
@@ -236,15 +238,16 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   justify-content: flex-start;
 }
-.img-placeholder {
-  width: 70px;
-  height: 56px;
+.country-img {
+  width: 80px;
+  height: 66px;
   background: #ccc;
   border: 1.5px solid #888;
   z-index: 2;
   position: relative;
   margin-right: -22px; /* Hace que la imagen se meta sobre la pill */
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  object-fit: cover;
 }
 
 .country-pill {
@@ -269,11 +272,6 @@ h1, h2, h3, h4, h5, h6 {
   overflow: visible;
 }
 
-.country-pill:hover {
-  background: #eee;
-  color: #000;
-  cursor: pointer;
-}
 /* Ajustes Clipcharts */
 .clipcharts {
   display: flex;
@@ -289,11 +287,13 @@ h1, h2, h3, h4, h5, h6 {
   border: 1.5px solid #ccc;
   padding: 12px 65px;
   border-radius: 100px;
+  text-align: center;
   font-weight: bold;
-  
+  width: 100px;
+
   /* Margen negativo a la izquierda */
-  margin-left: -25px; 
-  
+  margin-left: -25px;
+
   /* Sombra suave para darle profundidad al solapado */
   box-shadow: -4px 0 8px rgba(0,0,0,0.05);
   position: relative;
@@ -315,9 +315,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Efecto opcional: resalta la chart al pasar el ratón */
 .chart:hover {
-  transform: translateY(-5px);
   z-index: 10; /* Se pone por encima de todas al tocarla */
-  background: #e0e0e0;
 }
 
 /* ajustes carruseles */
@@ -472,13 +470,6 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
 }
 
-.enlace-video img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Esto hace que la imagen llene el cuadro sin deformarse */
-    display: block;
-}
-
 /* Estilo botones de flecha */
 .flecha-lateral {
     font-size: 40px; /* Flechas más grandes */
@@ -574,12 +565,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
 }
 
-.tag:hover {
-  background-color: var(--light-gray);
-  cursor: pointer;
-}
-
-
 .calendar {
   border: 1px solid var(--border-color);
   border-radius: 30px;
@@ -596,6 +581,14 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid #eee;
   display: flex;
   gap: 20px;
+}
+
+.numero-evento {
+  display: inline-block;
+  width: 2em;
+  text-align: right;
+  font-weight: bold;   /* <-- Esto los pone en negrita */
+  margin-right: 0.5em;
 }
 
 /* --- CONTENEDOR DEL FOOTER --- */
@@ -749,7 +742,6 @@ html {
         padding: 10px 20px; /* Menos margen en los lados para ganar espacio */
     }
 }
-/* ...tu CSS actual... */
 
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
@@ -810,5 +802,38 @@ html {
   .tendencias h3, .calendar h3 {
     font-size: 1.1em;
   }
+}
+
+/* botón únete*/
+.boton-comunidad {
+  display: flex;
+  justify-content: center;
+  margin: 32px auto 0 auto;
+  padding: 10px 32px;
+  border: 2px solid #222;
+  border-radius: 30px;
+  background: #fff;
+  color: #222;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 1em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #eee;
+  width:200px
+}
+
+.tag:hover,
+.country-pill:hover,
+.chart:hover,
+.boton-comunidad:hover {
+  background: #222;
+  color: #fff;
+  border-color: #222;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px #eee;
+  transform: scale(1.05);
 }
 
