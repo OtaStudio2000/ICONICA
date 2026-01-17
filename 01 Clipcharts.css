@@ -194,6 +194,7 @@ html {
     right: 50%;
     margin-left: -50vw;     /* Estos márgenes negativos lo estiran hacia los lados */
     margin-right: -50vw;
+    margin-top: 50px; /* Crea el espacio arriba del footer */
     background-color: #ff99f2; /* Tu color rosa */
     padding: 40px 0;
 }

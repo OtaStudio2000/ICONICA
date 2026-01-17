@@ -95,6 +95,87 @@
 
 
 
+/* --- CONTENEDOR TITULO--- */
+.contenedor-hero-novedades {
+    position: relative;
+    width: 100%;
+    height: 35vh; /* REDUCIDO: Franja más fina (antes era 60vh) */
+    overflow: hidden;
+    background-color: #000;
+}
+
+/* --- AJUSTE PARA IFRAMES DE YOUTUBE --- */
+.video-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-fondo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.video-fondo.activo {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Estirar el iframe para que no queden franjas negras */
+.video-fondo iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* Proporción 16:9 para cubrir el ancho */
+    min-height: 100%;
+    min-width: 177.77vh; /* Asegura que cubra la altura de la franja */
+    transform: translate(-50%, -50%);
+    pointer-events: none; /* Evita que el usuario pause el video al hacer clic */
+}
+
+/* --- CONTENIDO --- */
+.capa-contenido {
+    position: relative;
+    z-index: 4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 30px;
+    color: white;
+}
+
+.titulo-novedades {
+    font-size: 5vw; /* REDUCIDO: Tamaño de fuente más acorde a la franja fina */
+    font-weight: 900;
+    letter-spacing: 8px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.btn-nav {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-nav:hover {
+    color: #ffeabe;
+    transform: scale(1.2);
+}
+
+
+
+
 
 
 
@@ -194,6 +275,7 @@ html {
     right: 50%;
     margin-left: -50vw;     /* Estos márgenes negativos lo estiran hacia los lados */
     margin-right: -50vw;
+    margin-top: 50px; /* Crea el espacio arriba del footer */
     background-color: #ff99f2; /* Tu color rosa */
         padding: 40px 0;
 }
@@ -263,32 +345,26 @@ html, body {
     }
 }
 
-/* Estilos para móviles */
+/* Estilos para móviles TITULO Y VIDEOS*/
 @media (max-width: 768px) {
-    .grid-hashtags {
-        grid-template-columns: repeat(2, 1fr); /* En móviles pasa a 2 columnas */
+    .contenedor-hero-novedades {
+        height: 40vh; /* Altura más baja en móviles */
+    }
+
+    .titulo-novedades {
+        font-size: 12vw; /* Título más grande proporcionalmente en móvil */
+        letter-spacing: 4px;
+    }
+
+    .capa-contenido {
+        padding: 0 10px; /* Menos margen lateral en móvil */
+    }
+
+    .btn-nav {
+        font-size: 2rem; /* Flechas más pequeñas */
     }
 }
 
-@media (max-width: 480px) {
-    .grid-hashtags {
-        grid-template-columns: 1fr; /* En móviles muy pequeños 1 columna */
-    }
-}
-
-@media (max-width: 480px) {
-    .contenedor-titulo-principal h1 {
-        font-size: 40px; /* Reduce el título "DESCUBRE" para que no se corte */
-    }
-    .enlace-video {
-        flex: 0 0 100%; /* Un video por fila */
-    }
-    
-    .cabecera-seccion {
-        flex-direction: column; /* El título y "Ver todo" se apilan verticalmente */
-        align-items: flex-start;
-    }
-}
 
 /* --- REGLA PARA PANTALLAS PEQUEÑAS HEADER --- */
 @media (max-width: 600px) {
