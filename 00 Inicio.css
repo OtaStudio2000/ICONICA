@@ -93,25 +93,54 @@ body {
   position: relative;
 }
 
-/* Ranking Pills */
-.ranking-pills {
+/* Clipcharts */
+.clipcharts {
   display: flex;
   justify-content: center;
-  gap: -10px; /* Para el efecto de solapado del dibujo */
+  align-items: center;
   margin: 40px 0;
+  /* Añadimos un poco de padding lateral para que el borde no se corte */
+  padding: 10px;
 }
 
-.pill {
-  background: var(--light-gray);
-  border: 1px solid var(--border-color);
-  padding: 15px 40px;
-  border-radius: 50px;
-  min-width: 80px;
-  text-align: center;
+.chart {
+  background: #f0f0f0; /* Color de fondo sólido (importante) */
+  border: 1.5px solid #ccc;
+  padding: 12px 45px;
+  border-radius: 100px;
+  font-weight: bold;
+  
+  /* Margen negativo a la izquierda */
+  margin-left: -25px; 
+  
+  /* Sombra suave para darle profundidad al solapado */
+  box-shadow: -4px 0 8px rgba(0,0,0,0.05);
+  position: relative;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+/* El primer elemento no debe tener margen negativo */
+.chart:first-child {
+  margin-left: 0;
+}
+
+/* Control del orden en el que se apilan (Z-INDEX) */
+.chart:nth-child(1) { z-index: 5; }
+.chart:nth-child(2) { z-index: 4; }
+.chart:nth-child(3) { z-index: 3; }
+.chart:nth-child(4) { z-index: 2; }
+.chart:nth-child(5) { z-index: 1; }
+
+/* Efecto opcional: resalta la chart al pasar el ratón */
+.chart:hover {
+  transform: translateY(-5px);
+  z-index: 10; /* Se pone por encima de todas al tocarla */
+  background: #e0e0e0;
 }
 
 /* Grids de Contenido (Videoclips, Entrevistas) */
-.videoclips-grid {
+.videoclips {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
