@@ -170,11 +170,14 @@ html {
 
 /* --- CONTENEDOR DEL FOOTER --- */
 .footer-personalizado {
-    width: 100%;
-    padding: 40px 0 20px 0;
-    margin-top: 50px;
-    background-color: #ff91fd; /* CAMBIA AQUÍ EL COLOR DE FONDO */
-    border-top: 1px solid #ddd; /* Línea sutil superior */
+    width: 100vw;           /* Ocupa el 100% del ancho de la ventana */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;     /* Estos márgenes negativos lo estiran hacia los lados */
+    margin-right: -50vw;
+    background-color: #ff99f2; /* Tu color rosa */
+        padding: 40px 0;
 }
 
 .contenido-centrado-footer {
