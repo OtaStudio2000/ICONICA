@@ -1,6 +1,5 @@
-/* --- HEADER ---*/ 
+/* --- HEADER --- */
 
-/* --- CONTENEDOR DEL RECTÁNGULO AMARILLO --- */
 .header-container {
   background: #fde9c2;
   border: 1px solid #b48c6e;
@@ -9,7 +8,6 @@
   box-sizing: border-box;
 }
 
-/* Configuramos la "fila" de la tabla */
 .tabla-header {
   display: flex;
   align-items: center;
@@ -19,25 +17,30 @@
 }
 
 .bloque-celda {
-  flex: 1;
+  flex: 1 1 120px;
   text-align: center;
   font-family: 'Montserrat', serif;
-  font-size: 2rem;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
   color: #222;
   display: flex;
   align-items: center;
   justify-content: center;
   min-width: 0;
+  padding: 0 8px;
+  white-space: nowrap;         /* NO permite saltos de línea */
+  overflow: hidden;            /* Oculta el texto que sobresalga */
+  text-overflow: ellipsis;     /* Muestra ... si el texto no cabe */
 }
 
 .logo-central img {
   height: 120px;
   width: auto;
+  max-width: 100%;
   transform: perspective(400px) rotateY(-30deg);
 }
 
 .grupo-iconos {
-  flex: 1;
+  flex: 1 1 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,48 +49,68 @@
 }
 
 .espaciador {
-  flex: 1;
+  flex: 1 1 60px;
   pointer-events: none;
   background: transparent;
 }
 
-/* Iconos de Google Material */
 .material-symbols-outlined {
-  font-size: 24px;
+  font-size: 2vw;
+  min-font-size: 18px;
   color: #333;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-/* Bloque 5: Contenedor de iconos */
-.grupo-iconos {
-    display: flex ;
-    flex-direction: row ; /* Siempre en horizontal */
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1vw; /* El espacio entre ellos también se encoge */
-    list-style: none ;
-}
-
-/* Tamaño elástico de los iconos */
-.grupo-iconos .material-symbols-outlined {
-    /* La unidad 'vw' hace que el icono sea más pequeño si la ventana se estrecha */
-    font-size: 2vw;  
-    transition: transform 0.3s ease;
-    display: block;
-}
-
-/* Animación de agrandado (Hover) */
 .bloque-celda a, .material-symbols-outlined {
-    transition: transform 0.2s ease;
-    cursor: pointer;
-    text-decoration: none;
-    color: inherit;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 .bloque-celda a:hover, .material-symbols-outlined:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
+/* --- RESPONSIVE HEADER --- */
+@media (max-width: 900px) {
+  .bloque-celda {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    padding: 0 4px;
+  }
+  .logo-central img {
+    height: 70px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    overflow-x: auto;      /* Permite scroll horizontal si no cabe */
+  }
+  .tabla-header {
+    min-width: 500px;      /* Asegura que el header no se haga demasiado pequeño */
+    height: auto;
+    padding: 0;
+  }
+  .bloque-celda {
+    font-size: 10px;
+    padding: 0 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .logo-central img {
+    width: 50px;
+    height: auto;
+  }
+  .grupo-iconos .material-symbols-outlined {
+    font-size: 20px;
+  }
+  .espaciador {
+    display: none;
+  }
+}
 
 /* --- ESTILOS GENERALES DE LA PÁGINA --- */
 /* Carrusel Novedades */
@@ -116,7 +139,7 @@
 
 /* Cada sección de imagen individual */
 .slide {
-    flex: 0 0 100%; /* Cada slide mide exactamente el 100% del ancho */
+    flex: 0 0 100%; /* Cada slide mide exactamente o 100% del ancho */
     width: 100%;
     height: 100%;
     position: relative;
