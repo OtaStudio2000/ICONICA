@@ -28,6 +28,7 @@
     align-items: center;
 }
 
+
 /* ESTO QUITA EL PUNTO Y PONE LOS ICONOS EN FILA */
 .grupo-iconos {
     display: flex;       /* Los pone uno al lado del otro */
@@ -145,7 +146,7 @@
 .carrusel-contenedor {
     flex: 1;
     position: relative;
-    padding: 0 50px;
+    padding: 0 40px; /* Espacio para que quepan las flechas */
 }
 
 /* Contenedor del scroll */
@@ -153,21 +154,33 @@
     display: flex;
     gap: 15px; /* Espacio entre videos */
     overflow-x: auto; /* Permite el desplazamiento lateral */
-    scroll-behavior: smooth; /* CLAVE: Hace que el movimiento sea fluido */
-    scroll-snap-type: x mandatory; /* Hace que las imágenes se 'imanten' al centro */
-    scrollbar-width: none; /* Oculta la barra de scroll en Firefox */
+    
+    /* MAGIA CSS: Esto hace el movimiento suave y el efecto imán */
+    scroll-behavior: smooth; 
+    scroll-snap-type: x mandatory; 
+    
+    padding-bottom: 10px; /* Espacio extra abajo */
+    
+    /* Ocultar barra de scroll (Firefox) */
+    scrollbar-width: none; 
 }
 
+/* Ocultar barra de scroll (Chrome/Safari) */
 .carrusel-scroll::-webkit-scrollbar {
-    display: none; /* Oculta la barra de scroll en Chrome/Safari */
+    display: none; 
 }
 
-/* Ajuste para mostrar 3 imágenes exactamente */
+/* Ajuste de las tarjetas de video */
 .video-card {
-    flex: 0 0 calc(33.33% - 10px); /* 33% del ancho menos el margen del gap */
-    scroll-snap-align: start; /* Alinea la imagen al inicio al desplazarse */
+    /* Mantiene el tamaño fijo de tus videos */
+    flex: 0 0 calc(33.33% - 10px); 
+    
+    /* El imán: hace que el video se pare siempre en el centro */
+    scroll-snap-align: center; 
+    
     aspect-ratio: 16 / 9;
     overflow: hidden;
+    border-radius: 8px; /* Opcional: queda más bonito */
 }
 
 .video-card img {
@@ -175,28 +188,46 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Efecto zoom al pasar el ratón por el video */
+.video-card:hover img {
+    transform: scale(1.05);
 }
 
 /* --- BOTONES LATERALES --- */
 .btn-nav {
     position: absolute;
-    top: 60%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.4);
-    color: #000;
+    top: 50%; /* Centrado verticalmente */
+    transform: translateY(-50%); /* Corrige el centrado exacto */
+    
+    background: rgba(0, 0, 0, 0); /* Fondo semitransparente oscuro */
+    color: purple ;
+    
     text-decoration: none;
-    padding: 12px 6px;
+    padding: 10px 15px;
     font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%; /* Botones redondos */
     z-index: 10;
-    border-radius: 4px;
-    transition: 0.3s;
+    transition: background 0.3s;
+    
+    /* Evita que se seleccione el texto al hacer click rápido */
+    user-select: none; 
 }
 
-.btn-izq { left: 5px; }
-.btn-der { right: 5px; }
-
 .btn-nav:hover {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0); /* Más oscuro al pasar el ratón */
+}
+
+/* Posición específica de cada flecha */
+.izq {
+    left: 0; /* Pegado a la izquierda del contenedor */
+}
+
+.der {
+    right: 0; /* Pegado a la derecha del contenedor */
 }
 
 /* Efecto al pasar el ratón */
@@ -406,40 +437,4 @@ html, body {
     .header-container {
         padding: 10px 20px; /* Menos margen en los lados para ganar espacio */
     }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
 }
