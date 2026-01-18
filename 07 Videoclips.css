@@ -91,6 +91,10 @@
 
 
 
+
+
+
+
 /* Reset básico para asegurar que ocupe todo el ancho */
 * {
     margin: 0;
@@ -143,6 +147,12 @@
     user-select: none; /* No seleccionable como pediste antes */
 }
 
+
+
+
+
+
+
 /* --- AJUSTES PARA DISPOSITIVOS  --- */
 
 /* Tablets */
@@ -165,6 +175,13 @@
         letter-spacing: 5px;
     }
 }
+
+
+
+
+
+
+
 
 
 
@@ -304,6 +321,13 @@
 @media (max-width: 600px) {
     .video-card { flex: 0 0 calc(50% - 6px); } /* 2 imágenes */
     .btn-nav { display: none; } /* En móvil se usa el dedo directamente */
+}
+
+/* --- Texto de paise --- */
+.enlace-pais {
+    color: #000000 !important; /* Fuerza el color negro */
+    text-decoration: none;     /* Quita el subrayado azul por defecto */
+    font-weight: bold;         /* Opcional: para que resalte más como en la imagen */
 }
 
 
