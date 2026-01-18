@@ -201,7 +201,7 @@ body {
     display: grid;
     /* Esto asegura las 3 columnas y evita que las tarjetas se estiren horizontalmente */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 5%; /* Espacio entre las tarjetas */
+    gap: 30px; /* Espacio entre las tarjetas */
     padding: 20px;
 }
 
