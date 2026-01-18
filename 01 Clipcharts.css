@@ -65,9 +65,6 @@
     /* La unidad 'vw' hace que el icono sea más pequeño si la ventana se estrecha */
     font-size: 2vw; 
     /* Ponemos un tamaño mínimo y máximo para que no desaparezcan ni sean gigantes */
-    min-font-size: 18px; 
-    max-font-size: 30px;
-    
     transition: transform 0.3s ease;
     display: block;
 }
@@ -91,7 +88,14 @@
     transform: scale(1.1);
 }
 
+/*--- TIPOGRAFÍA ---*/
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
 
+h1, h2, h3, h4, h5, h6,/* añade aquí cualquier clase de título personalizada */{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
 
 
 
