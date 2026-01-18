@@ -1,3 +1,93 @@
+/* --- HEADER ---*/ 
+
+/* --- CONTENEDOR DEL RECTÁNGULO AMARILLO --- */
+.header-container {
+    background-color: #ffeabe; 
+    margin: 10px 20px;         /* Margen externo para que el rectángulo no toque el borde del navegador */
+    padding: 15px 80px;       /* MARGEN LATERAL INTERNO: Esto separa CLIPSCHARTS e Iconos de los bordes */
+    border: 1px solid #823f3f;
+    box-sizing: border-box;
+}
+
+/* Configuramos la "fila" de la tabla */
+.tabla-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    list-style: none; /* Elimina puntos si usaste <ul> */
+}
+
+/* Cada celda de la tabla */
+.bloque-celda {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTO QUITA EL PUNTO Y PONE LOS ICONOS EN FILA */
+.grupo-iconos {
+    display: flex;       /* Los pone uno al lado del otro */
+    gap: 15px;           /* Espacio entre la lupa y el usuario */
+    justify-content: flex-end; /* Los pega al borde derecho del header */
+}
+
+/* Quitamos cualquier decoración de lista que pueda venir de otro lado */
+.grupo-iconos a, .grupo-iconos span {
+    text-decoration: none;
+    list-style-type: none; /* Asegura que no haya puntos */
+    display: flex;
+    align-items: center;
+}
+
+/* Iconos de Google Material */
+.material-symbols-outlined {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Bloque 5: Contenedor de iconos */
+.grupo-iconos {
+    display: flex !important;
+    flex-direction: row !important; /* Siempre en horizontal */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1vw; /* El espacio entre ellos también se encoge */
+    list-style: none !important;
+}
+
+/* Tamaño elástico de los iconos */
+.grupo-iconos .material-symbols-outlined {
+    /* La unidad 'vw' hace que el icono sea más pequeño si la ventana se estrecha */
+    font-size: 2vw; 
+    /* Ponemos un tamaño mínimo y máximo para que no desaparezcan ni sean gigantes */
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+/* Bloque del logo: le damos un poco más de importancia si quieres */
+.logo-central img {
+    height: auto;
+    max-width: 90%;         /* El logo también se hace pequeño con la celda */
+    width: 120px;           /* Tamaño máximo */
+}
+
+/* Animación de agrandado (Hover) */
+.bloque-celda a, .material-symbols-outlined {
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.bloque-celda a:hover, .material-symbols-outlined:hover {
+    transform: scale(1.1);
+}
+
 /* Configuración General */
 :root {
     --border-color: #ccc;
