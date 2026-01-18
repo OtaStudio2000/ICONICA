@@ -318,7 +318,7 @@ body {
     justify-items: center;
     /* Esto asegura las 6 columnas y evita que las tarjetas se estiren horizontalmente */
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
-    gap: 5%; /* Espacio entre las tarjetas */
+    gap: 30px; /* Espacio entre las tarjetas */
     padding: 5%;
     box-sizing: border-box;
 }
