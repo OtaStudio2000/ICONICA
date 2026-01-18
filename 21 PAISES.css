@@ -120,7 +120,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
+    background-color: #fb70f4; /* Color inicial (rosa) */
+    transition: all 0.4s ease;  /* Hace que los cambios sean suaves */
+    cursor: pointer;           /* Indica que es interactivo */
     z-index: 5;
 }
 
@@ -140,6 +142,20 @@
     margin-top: 8px;
     font-weight: bold;
     font-size: 0.9rem;
+}
+
+/* 2. Efecto al pasar el ratón (Hover) */
+.perfil-artista:hover {
+    background-color: #f0f7ff; /* Cambia a un azul muy suave o el que prefieras */
+    transform: scale(1.03);    /* Hace que la sección crezca un 3% */
+    z-index: 10;               /* Asegura que al crecer se vea por encima de otros elementos */
+    box-shadow: 5px 0 15px rgba(0,0,0,0.1); /* Añade una sombra suave para dar relieve */
+}
+
+/* 3. Opcional: Si quieres que la foto también reaccione */
+.perfil-artista:hover img {
+    border-color: #fb8c00;     /* Cambia el color del borde de la foto al pasar el ratón */
+    filter: brightness(1.1);   /* Le da un poco más de luz a la foto */
 }
 
 /* --- CARRUSEL (DERECHA) --- */
