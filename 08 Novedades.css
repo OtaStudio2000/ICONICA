@@ -182,6 +182,8 @@ body {
 
 .contenedor-principal {
     padding: 50px 5%;
+    padding-bottom: 23%; /* Añade espacio extra abajo para el footer */
+
 }
 
 /* --- GRID DE 3 COLUMNAS X 5 FILAS --- */
@@ -189,7 +191,7 @@ body {
     display: grid;
     /* Esto asegura las 3 columnas y evita que las tarjetas se estiren horizontalmente */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 30px;
+    gap: 5%; /* Espacio entre las tarjetas */
     padding: 20px;
 }
 

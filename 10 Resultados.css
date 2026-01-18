@@ -89,22 +89,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* --- AJUSTES ICONOS COMO IMAGEN --- */
 
 .material-symbols-outlined {
@@ -114,10 +98,6 @@
     'GRAD' 0,
     'opsz' 24
 }
-
-
-
-
 
 /* --- AJUSTES ICONOS GENERAL --- */
 
@@ -141,8 +121,168 @@
 }
 
 
+/* --- BODY ---*/
+:root {
+    --max-width: 1100px;
+    --main-padding: 40px;
+    --card-gap: 24px;
+    --border-radius: 20px;
+    --bg-gray: #f8f8f8;
+    --border-color: #e0e0e0;
+}
 
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
 
+/* Contenedor Principal */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--main-padding) 20px;
+}
+
+/* Buscador */
+.search-section {
+    margin: 30px 0 20px 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #bbb;
+    border-radius: 30px;
+    padding: 8px 18px;
+    background: #fff;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.search-container:focus-within {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-color: #bbb;
+}
+.search-container .material-symbols-outlined {
+    font-size: 1.5rem;
+    color: #222;
+    margin-left: 8px;
+}
+
+.search-container input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 1.1rem;
+    background: transparent;
+    padding: 0 8px;
+}
+
+/* Filtros */
+.filters {
+    display: flex;
+    gap: 12px;
+    margin: 18px auto 30px auto;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    max-width: 900px;
+    justify-content: flex-start;
+}
+
+.filter-chip {
+    background: #ececec;
+    border: none;
+    border-radius: 30px;
+    padding: 8px 24px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #555;
+    transition: background 0.2s;
+}
+
+.filter-chip:hover,
+.filter-chip.active {
+    background: #bbb;
+    color: #222;
+}
+
+.filter-chip.active {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Grid y Tarjetas */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 18px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 98vw; /* Ocupa casi todo el ancho de la ventana */
+    padding: 0 18px 24px 18px;
+    box-sizing: border-box;
+    justify-items: center; /* Centra las tarjetas en su celda */
+}
+
+.card {
+    background: #fff;
+    border: 1.5px solid #888;
+    border-radius: 22px;
+    aspect-ratio: 1 / 1;
+    width: 140px;
+    max-width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10px 6px 6px 6px;
+    box-sizing: border-box;
+    transition: box-shadow 0.2s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.card-header {
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.card-header h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.1rem;
+}
+
+.card-header .subtitle {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+.card-header .author {
+    margin: 4px 0 0 0;
+    font-size: 0.85rem;
+    color: #444;
+}
+
+/* Placeholder Imagen */
+.img-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #ececec;
+    border-radius: 12px;
+    margin-bottom: 8px;}
 
 /* --- BOTÓN VOLVER ARRIBA --- */
 .boton-subir {
@@ -178,10 +318,6 @@
 html {
     scroll-behavior: smooth; /* Hace que toda la página suba suavemente, no de golpe */
 }
-
-
-
-
 
 /* --- CONTENEDOR DEL FOOTER --- */
 .footer-personalizado {
@@ -306,5 +442,41 @@ html, body {
     }
     .header-container {
         padding: 10px 20px; /* Menos margen en los lados para ganar espacio */
+    }
+}
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 600px) {
+    .search-container {
+        padding: 6px 10px;
+    }
+    .filters {
+        gap: 6px;
+        padding-bottom: 6px;
+    }
+}
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 18px;
+        padding: 18px 6px;
+    }
+}
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 8px;
+        padding: 8px 2px;
+        max-width: 100vw;
+    }
+    .card {
+        padding: 4px;
+        border-radius: 10px;
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 400px) {
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
