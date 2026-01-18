@@ -40,12 +40,13 @@
 }
 
 .grupo-iconos {
-  flex: 1 1 120px;
+flex: 1 1 120px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2vw;
   font-size: 2.5rem;
+  overflow: visible; /* Permite que los iconos crezcan fuera del contenedor */
 }
 
 .espaciador {
