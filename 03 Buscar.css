@@ -110,7 +110,7 @@ h1, h2, h3, h4, h5, h6/* añade aquí cualquier clase de título personalizada *
   display: block;      /* Obligatorio para que funcione el margin auto */
   margin-left: auto;   /* Empuja desde la izquierda */
   margin-right: auto;  /* Empuja desde la derecha */
-  margin-top: 50px;    /* Espacio superior */
+  margin-top: 0px;    /* Espacio superior */
   margin-bottom: 30px; /* Espacio con la barra de búsqueda */
   max-width: 300px;    /* Tamaño máximo del logo */
   align-content: center;
