@@ -217,101 +217,191 @@ body {
     background-color: #333;
     color: #fff;
 }
-
-/* Grid y Tarjetas */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 18px;
-    margin: 0 auto;
+/* Contenedor que permite el desplazamiento */
+.slides-container {
+    display: flex;
     width: 100%;
-    max-width: 98vw; /* Ocupa casi todo el ancho de la ventana */
-    padding: 0 18px 24px 18px;
-    box-sizing: border-box;
-    justify-items: center; /* Centra las tarjetas en su celda */
+    height: 100%;
+    overflow-x: scroll; /* Permite el scroll horizontal */
+    scroll-behavior: smooth; /* MOVIMIENTO FLUIDO SIN JS */
+    scroll-snap-type: x mandatory; /* Ajuste perfecto a cada imagen */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
 }
 
-.card {
-    background: #fff;
-    border: 1.5px solid #888;
-    border-radius: 22px;
-    aspect-ratio: 1 / 1;
-    width: 140px;
-    max-width: 100%;
-    min-width: 0;
+.slides-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome/Safari */
+}
+
+/* Cada sección de imagen individual */
+.slide {
+    flex: 0 0 100%; /* Cada slide mide exactamente el 100% del ancho */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    scroll-snap-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen llena la pantalla sin deformarse */
+    display: block;
+}
+
+/* Capa de Texto y Flechas */
+.interfaz {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between; /* Flechas a los lados */
+    align-items: center; /* Todo centrado verticalmente */
+    padding: 0 50px;
+    box-sizing: border-box;
+    pointer-events: none; /* El contenedor no bloquea clics */
+}
+
+.titulo-fijo {
+    color: white;
+    font-size: 8vw; /* Texto muy grande y responsivo */
+    font-weight: 900;
+    letter-spacing: 20px;
+    text-align: center;
+    margin: 0;
+    pointer-events: none; /* El texto no reacciona al ratón */
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.flecha {
+    pointer-events: auto; /* Las flechas sí reaccionan al clic */
+    color: white;
+    text-decoration: none;
+    font-size: 4rem;
+    transition: transform 0.3s;
+}
+
+.flecha:hover {
+    transform: scale(1.2);
+}
+
+/* --- AJUSTES TIPOGRAFÍA --- */
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.titulo-video, /* añade aquí cualquier clase de título personalizada */
+.titulo-fijo,
+.videoclips-title {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+
+
+/* --- AJUSTES ICONOS COMO IMAGENCONTENEDOR TARJETAS --- */
+/* --- CONFIGURACIÓN DE PÁGINA --- */
+body {
+    background-color: #f9f9f9; /* Cambia al color exacto de tu web */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.contenedor-principal {
+    padding: 5%;
+    padding-bottom: 20%; /* Añade espacio extra abajo para el footer */
+
+}
+
+/* --- GRID DE 3 COLUMNAS X 5 FILAS --- */
+.grid-resultados {
+    display: grid;
+    justify-items: center;
+    /* Esto asegura las 6 columnas y evita que las tarjetas se estiren horizontalmente */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 5%; /* Espacio entre las tarjetas */
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+/* --- DISEÑO DE LA TARJETA --- */
+.tarjeta-video {
+    background-color: #ffffff; /* Color inicial de la tarjeta */
+    border: 1.5px solid #ccc;  /* Borde fino como en el wireframe */
+    border-radius: 25px;       /* Bordes redondeados */
+    padding: 20px;
+    text-decoration: none;     /* Quita el subrayado de los enlaces */
+    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding: 10px 6px 6px 6px;
-    box-sizing: border-box;
-    transition: box-shadow 0.2s;
+    transition: all 0.3s ease; /* Suaviza la animación de hover */
     text-align: center;
+    /* Esto asegura que la tarjeta se adapte a su celda del grid */
+    width: 100%; 
+    max-width: 400px; /* Opcional: para que no sean gigantes en pantallas muy anchas */
+    margin: 0 auto;   /* Las centra dentro de su columna */
 }
 
-.card:hover {
-    transform: translateY(-4px);
+/* --- TEXTOS DENTRO DE LA TARJETA --- */
+.info-texto {
+    margin-bottom: 15px;
 }
 
-.card-header {
-    margin-bottom: 8px;
-    text-align: center;
-}
-
-.card-header h3 {
-    margin: 0 0 4px 0;
-    font-size: 1.1rem;
-}
-
-.card-header .subtitle {
+.titulo-video {
+    font-size: 1.4rem;
     margin: 0;
-    font-size: 0.8rem;
-    color: #888;
-    letter-spacing: 1px;
-}
-
-.card-header .author {
-    margin: 4px 0 0 0;
-    font-size: 0.85rem;
-    color: #444;
-}
-
-/* Placeholder Imagen */
-.img-placeholder {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    background-color: #ececec;
-    border-radius: 12px;
-    margin-bottom: 8px;}
-
-/* --- BOTÓN VOLVER ARRIBA --- */
-.boton-subir {
-    position: fixed;         /* Se queda fijo en la pantalla */
-    bottom: 30px;            /* Distancia desde abajo */
-    right: 30px;             /* Distancia desde la derecha */
-    width: 50px;
-    height: 50px;
-    background-color: #333;  /* Color del botón */
-    color: #fff;             /* Color de la flecha */
-    border-radius: 50%;      /* Forma circular */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    z-index: 1000;           /* Asegura que esté por encima de todo */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-}
-
-.boton-subir:hover {
-    background-color: #000;  /* Se oscurece al pasar el ratón */
-    transform: translateY(-5px); /* Sube un poquito al pasar el ratón */
-}
-
-/* Ajuste del icono dentro del botón */
-.boton-subir .material-symbols-outlined {
-    font-size: 35px;
     font-weight: bold;
+}
+
+.nombre-album {
+    font-size: 1rem;
+    margin: 5px 0;
+    color: #666;
+}
+
+.nombre-artista {
+    font-size: 0.85rem;
+    margin: 0;
+    color: #888;
+}
+
+/* --- IMAGEN DEL VIDEOCLIP --- */
+.contenedor-imagen {
+    width: 100%;       /* Ocupa todo el ancho de la tarjeta */
+    height: 200px;     /* AQUÍ defines la altura fija que quieres para todas */
+    overflow: hidden;  /* Corta lo que sobre de la imagen */
+    border-radius: 15px;
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* ESTA ES LA CLAVE: ajusta la imagen como un fondo sin estirarla */
+    object-position: center; /* Centra la imagen para que no se corte lo importante */
+    display: block;
+}
+
+/* --- EFECTO HOVER (Raton por encima) --- */
+.tarjeta-video:hover {
+    transform: scale(1.05);      /* Se agranda un 5% */
+    background-color: #ffeabe;   /* Cambia al color crema/amarillo de tu marca */
+    border-color: #823f3f;       /* El borde cambia de color */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Añade una sombra suave */
+}
+
+/* --- RESPONSIVO (Para que no se rompa en móvil) --- */
+@media (max-width: 900px) {
+    .grid-resultados {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-resultados {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
 }
 
 /* EFECTO SUAVE AL SUBIR */
@@ -457,14 +547,14 @@ html, body {
 @media (max-width: 1024px) {
     .grid {
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-        gap: 18px;
+        gap: 5%;
         padding: 18px 6px;
     }
 }
 @media (max-width: 700px) {
     .grid {
         grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
-        gap: 8px;
+        gap: 5%;
         padding: 8px 2px;
         max-width: 100vw;
     }

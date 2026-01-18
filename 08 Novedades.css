@@ -88,8 +88,18 @@
 }
 
 
+/*Tipografías*/
+/* --- AJUSTES TIPOGRAFÍA --- */
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
 
-
+h1, h2, h3, h4, h5, h6,
+.titulo-video, /* añade aquí cualquier clase de título personalizada */
+.titulo-fijo,
+.videoclips-title {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
 
 /* --- Contenedor TITULAR + IMAGENES --- */
 .carrusel-completo {
