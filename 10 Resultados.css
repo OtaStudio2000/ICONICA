@@ -186,7 +186,7 @@ body {
 .filters {
     display: flex;
     gap: 12px;
-    margin: 18px auto 30px auto;
+    margin: 18px auto 10px auto;
     overflow-x: auto;
     padding-bottom: 10px;
     max-width: 900px;
