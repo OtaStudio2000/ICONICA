@@ -1,3 +1,183 @@
+/* --- HEADER ---*/ 
+
+/* --- CONTENEDOR DEL RECTÁNGULO AMARILLO --- */
+.header-container {
+    background-color: #ffeabe; 
+    margin: 10px 20px;         /* Margen externo para que el rectángulo no toque el borde del navegador */
+    padding: 15px 80px;       /* MARGEN LATERAL INTERNO: Esto separa CLIPSCHARTS e Iconos de los bordes */
+    border: 1px solid #823f3f;
+    box-sizing: border-box;
+}
+
+/* Configuramos la "fila" de la tabla */
+.tabla-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    list-style: none; /* Elimina puntos si usaste <ul> */
+}
+
+/* Cada celda de la tabla */
+.bloque-celda {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTO QUITA EL PUNTO Y PONE LOS ICONOS EN FILA */
+.grupo-iconos {
+    display: flex;       /* Los pone uno al lado del otro */
+    gap: 15px;           /* Espacio entre la lupa y el usuario */
+    justify-content: flex-end; /* Los pega al borde derecho del header */
+}
+
+/* Quitamos cualquier decoración de lista que pueda venir de otro lado */
+.grupo-iconos a, .grupo-iconos span {
+    text-decoration: none;
+    list-style-type: none; /* Asegura que no haya puntos */
+    display: flex;
+    align-items: center;
+}
+
+/* Iconos de Google Material */
+.material-symbols-outlined {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Bloque 5: Contenedor de iconos */
+.grupo-iconos {
+    display: flex !important;
+    flex-direction: row !important; /* Siempre en horizontal */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1vw; /* El espacio entre ellos también se encoge */
+    list-style: none !important;
+}
+
+/* Tamaño elástico de los iconos */
+.grupo-iconos .material-symbols-outlined {
+    /* La unidad 'vw' hace que el icono sea más pequeño si la ventana se estrecha */
+    font-size: 2vw;  
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+/* Bloque del logo: le damos un poco más de importancia si quieres */
+.logo-central img {
+    height: auto;
+    max-width: 90%;         /* El logo también se hace pequeño con la celda */
+    width: 120px;           /* Tamaño máximo */
+}
+
+/* Animación de agrandado (Hover) */
+.bloque-celda a, .material-symbols-outlined {
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.bloque-celda a:hover, .material-symbols-outlined:hover {
+    transform: scale(1.1);
+}
+
+
+/*Tipografías*/
+/* --- AJUSTES TIPOGRAFÍA --- */
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.titulo-video, /* añade aquí cualquier clase de título personalizada */
+.titulo-fijo,
+.videoclips-title {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+/* --- Contenedor TITULAR + IMAGENES --- */
+.carrusel-completo {
+    position: relative;
+    width: 100%;
+    height: 30vh; /* Ocupa toda la altura de la ventana */
+    overflow: hidden;
+}
+
+/* Contenedor que permite el desplazamiento */
+.slides-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll; /* Permite el scroll horizontal */
+    scroll-behavior: smooth; /* MOVIMIENTO FLUIDO SIN JS */
+    scroll-snap-type: x mandatory; /* Ajuste perfecto a cada imagen */
+    scrollbar-width: none; /* Oculta la barra en Firefox */
+}
+
+.slides-container::-webkit-scrollbar {
+    display: none; /* Oculta la barra en Chrome/Safari */
+}
+
+/* Cada sección de imagen individual */
+.slide {
+    flex: 0 0 100%; /* Cada slide mide exactamente el 100% del ancho */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    scroll-snap-align: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* La imagen llena la pantalla sin deformarse */
+    display: block;
+}
+
+/* Capa de Texto y Flechas */
+.interfaz {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between; /* Flechas a los lados */
+    align-items: center; /* Todo centrado verticalmente */
+    padding: 0 50px;
+    box-sizing: border-box;
+    pointer-events: none; /* El contenedor no bloquea clics */
+}
+
+.titulo-fijo {
+    color: white;
+    font-size: 8vw; /* Texto muy grande y responsivo */
+    font-weight: 900;
+    letter-spacing: 20px;
+    text-align: center;
+    margin: 0;
+    pointer-events: none; /* El texto no reacciona al ratón */
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.flecha {
+    pointer-events: auto; /* Las flechas sí reaccionan al clic */
+    color: white;
+    text-decoration: none;
+    font-size: 4rem;
+    transition: transform 0.3s;
+}
+
+.flecha:hover {
+    transform: scale(1.2);
+}
+
 
 
 
