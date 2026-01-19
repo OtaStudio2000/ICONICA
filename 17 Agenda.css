@@ -98,7 +98,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+}
+/*--- TIPOGRAFÍA ---*/
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6/* añade aquí cualquier clase de título personalizada */{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 body {

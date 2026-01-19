@@ -14,7 +14,6 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -650,8 +649,10 @@ body {
 }
 
 /* Configuración General */
+
+/*--- TIPOGRAFÍA ---*/
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     background-color: #f9f9f9;
     margin: 0;
     padding: 20px;
@@ -847,10 +848,6 @@ body {
 }
 
 /*--- TIPOGRAFÍA ---*/
-body {
-    font-family: 'Poppins', Arial, Helvetica, sans-serif;
-}
-
 h1, h2, h3, h4, h5, h6/* añade aquí cualquier clase de título personalizada */{
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }

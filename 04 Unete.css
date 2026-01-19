@@ -3,7 +3,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
 }
 
 body {
@@ -11,7 +10,14 @@ body {
     color: #333;
     overflow-x: hidden;
 }
+/*--- TIPOGRAFÍA ---*/
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
 
+h1, h2, h3, h4, h5, h6/* añade aquí cualquier clase de título personalizada */{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
 /* BANNERS GENERAL */
 .banner {
     position: relative;
@@ -75,7 +81,6 @@ body {
 
 .content-title {
     margin: 0;                 /* Quita el margen por defecto del h2 */
-    font-family: sans-serif;   /* Fuente limpia similar a la imagen */
     font-size: 3rem;
     text-transform: uppercase; /* Para que diga MISIÓN en mayúsculas */
 }
@@ -84,7 +89,6 @@ body {
     text-decoration: none;     /* Quita el subrayado del link */
     color: #666;               /* Color grisáceo como el "Ver todo" */
     font-size: 18px;
-    font-family: sans-serif;
 }
 
 .learn-more-button:hover {

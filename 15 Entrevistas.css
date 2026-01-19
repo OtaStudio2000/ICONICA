@@ -121,7 +121,7 @@
     padding: 10px 30px; /* Botones un poco más anchos y cómodos */
     text-decoration: none;
     color: #000000;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 1rem;
     transition: all 0.3s ease;
@@ -162,10 +162,14 @@
 
 /* Configuración General */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
     background-color: #f9f9f9;
     margin: 0;
     padding: 20px;
+}
+
+h1, h2, h3, h4, h5, h6/* añade aquí cualquier clase de título personalizada */{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 .contenedor-principal {
