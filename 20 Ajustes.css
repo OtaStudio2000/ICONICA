@@ -141,50 +141,97 @@ h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
 .header-profile-full {
     width: 100%;
     position: relative;
-    margin-bottom: 100px; /* Espacio para que la card no pise el contenido */
+    /* Eliminamos márgenes que puedan empujar mal */
 }
 
+/* El Banner */
 .banner {
     width: 100%;
     height: 250px;
-    background-color: #d1d1d1;
+    position: relative; /* Padre relativo para que el icono se centre dentro */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #333; /* Fondo oscuro por si falla la imagen */
 }
 
 /* Contenedor para centrar la tarjeta del perfil */
 .profile-card-container {
-    max-width: 1000px;
+max-width: 1000px;
     margin: 0 auto;
-    position: relative;
     padding: 0 20px;
+    position: relative;
+    z-index: 20; /* Asegura que esté sobre el banner */
 }
 
 .profile-card {
-    position: absolute;
-    top: -50px; /* Sube la tarjeta para que tape parte del banner */
-    width: 100%;
+    background: white; 
+    margin-top: -60px; /* Sube la tarjeta para morder el banner */
     border: 1px solid var(--border-color);
     border-radius: 60px;
     display: flex;
     align-items: center;
-    padding: 15px 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 15px 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
 
+/* Contenedor del Avatar */
 .avatar {
     width: 120px;
     height: 120px;
-    background: #e0e0e0;
+    position: relative; /* Padre relativo para que el icono se centre dentro */
     border-radius: 50%;
     border: 5px solid white;
+    flex-shrink: 0;
+    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
+    overflow: hidden;
+}
+/* --- LA VARITA: POSICIÓN ABSOLUTA --- */
+/* Esto hace que flote EN EL CENTRO y no empuje a la imagen */
+.icon-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+    z-index: 10; /* Siempre por encima de la imagen */
+    color: rgba(255, 255, 255, 0.8) !important;
+    pointer-events: none; /* No se puede clickear, no es un botón */
+    text-shadow: 0 0 15px rgba(0,0,0,0.5);
 }
 
+.banner .icon-overlay { font-size: 80px; }
+.avatar .icon-overlay { font-size: 40px; }
+
+/* Asegurar que las imágenes ocupen todo el contenedor */
+.banner img, .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Estilo común para la varita sobre las imágenes */
+/* Estilo común para la varita sobre las imágenes */
+.banner .material-symbols-outlined,
+.avatar .material-symbols-outlined {
+    position: absolute; /* Hace que flote sobre la imagen */
+    z-index: 10;        /* Asegura que esté por encima */
+    color: white;       /* Color blanco para que resalte */
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra para que se vea en fondos claros */
+    pointer-events: none; /* Opcional: para que al hacer clic, actúe sobre la imagen y no el icono */
+}
+/* Ajuste de tamaño específico */
+.banner .material-symbols-outlined {
+    font-size: 4rem; /* Varita más grande en el banner */
+}
+
+.avatar .material-symbols-outlined {
+    font-size: 2.5rem; /* Varita mediana en el avatar */
+}
 .profile-info {
     margin-left: 20px;
     display: flex;
@@ -193,8 +240,14 @@ h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
     width: 100%;
 }
 
-.name { font-weight: bold; font-size: 1.4rem; letter-spacing: 1px; }
-
+.name { 
+    font-weight: bold; 
+    font-size: 1.4rem; 
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el nombre y su varita */
+}
 .country-pill {
     border: 1px solid black;
     padding: 5px 15px;
@@ -319,18 +372,21 @@ input:checked + .slider:before { transform: translateX(26px); }
 
 .info-legal { border-top: 1px solid rgba(0,0,0,0.1); padding-top: 20px; text-align: left; margin: 0 40px; }
 
-/* --- RESPONSIVE --- */
+/* --- RESPONSIVE (Móvil) --- */
 @media (max-width: 768px) {
     .profile-card {
         flex-direction: column;
-        border-radius: 30px;
         text-align: center;
-        top: -80px;
+        margin-top: -80px;
+        padding: 30px 20px;
     }
-    .profile-info { margin-left: 0; flex-direction: column; gap: 15px; }
-    .avatar { margin-top: -60px; }
-    .header-profile-full { margin-bottom: 220px; }
-    .tabla-header { flex-wrap: wrap; gap: 10px; }
-    .bloque-celda { flex: 0 0 45%; }
-    .logo-central { order: -1; flex: 0 0 100%; }
+    .profile-info {
+        margin-left: 0;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    .avatar {
+        margin-top: -70px;
+    }
 }

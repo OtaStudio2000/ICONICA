@@ -1,3 +1,288 @@
+/* RESET GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* BANNERS GENERAL */
+.banner {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* HERO SECTION */
+
+/* 1. Eliminamos el margen superior de la primera sección para que pegue con el banner */
+.mission-section {
+    margin-top: 0;
+    position: relative;
+    padding-top: 0;
+    z-index: 10;
+
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+/* 2. Ajustamos el contenedor de la etiqueta para que no tenga separación arriba */
+.mission-section .label-container {
+    margin-top: -115px;
+    /* line-height: 0;  */
+}
+
+
+.hero-banner {
+    height: 400px;
+    background-color: #e0e0e0;
+    margin-bottom: 0;
+    overflow: visible;
+}
+
+.hero-overlay {
+    position: absolute;
+    width: 70%;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-text {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* SECCIONES MISIÓN / VISIÓN */
+.content-section {
+    max-width: 2000px;
+    margin: 60px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.label-container {
+    margin-bottom: 0px;
+    position: relative;
+    z-index: 2;
+}
+
+.label-left { text-align: left; }
+.label-right { text-align: right; }
+
+/* .section-label {
+    display: inline-block;
+    border: 2px solid #333;
+    padding: 10px 40px;
+    border-radius: 20px 20px 0 0;
+    background: white;
+    font-size: 1.8rem;
+    min-width: 250px;
+    text-align: center;
+} */
+
+.section-label {
+    display: inline-block;
+    border: 2px solid #333;
+    border-bottom: none; /* Quitamos el borde inferior para que se fusione con el bloque de texto */
+    padding: 10px 40px;
+    border-radius: 20px 20px 0 0;
+    background: white;
+    font-size: 1.8rem;
+    min-width: 250px;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+.text-block {
+    border-top: 2px solid #333;
+    padding: 40px 0;
+}
+
+.text-block p {
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+}
+
+/* DIFERENCIACIÓN */
+.diff-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+}
+
+.diff-title {
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+.diff-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 150px;
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+.diff-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.diff-item:hover {
+    transform: translateY(-10px);
+}
+
+.circle-placeholder {
+    width: 120px;
+    height: 120px;
+    background-color: #d1d1d1;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.diff-item h3 {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+.diff-item p {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    color: #666;
+    padding: 0 10px;
+}
+
+/* JOIN COMMUNITY (BANNER INFERIOR) */
+/* .join-banner {
+    height: 300px;
+    margin-top: 40px;
+} */
+
+.cta-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    padding: 15px 60px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cta-button:hover {
+    background-color: #333;
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* FOOTER */
+.social-footer {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-btn {
+    width: 50px;
+    height: 50px;
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-btn:hover {
+    transform: scale(1.2) rotate(10deg);
+    background-color: #555;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-size: 0.7rem;
+    color: #aaa;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .nav-container { flex-direction: column; gap: 15px; }
+    .hero-text { font-size: 0.9rem; width: 90%; }
+    .section-label { min-width: 180px; font-size: 1.4rem; }
+    .diff-grid { grid-template-columns: 1fr 1fr; }
+}
+
+.join-content {
+    position: absolute; /* Permite que el texto flote sobre la imagen */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+    text-align: center;
+    width: 100%;
+    z-index: 2; /* Asegura que esté por encima de la imagen */
+}
+
+/* AJUSTE ADICIONAL PARA EL BANNER */
+.join-banner {
+    position: relative; /* Necesario para que .join-content se posicione respecto a este contenedor */
+    height: 300px;
+    margin-top: 40px;
+}
+
+
+
 /* --- HEADER ---*/ 
 
 /* --- CONTENEDOR DEL RECTÁNGULO AMARILLO --- */
@@ -64,7 +349,7 @@
 .grupo-iconos .material-symbols-outlined {
     /* La unidad 'vw' hace que el icono sea más pequeño si la ventana se estrecha */
     font-size: 2vw; 
-    /* Ponemos un tamaño mínimo y máximo para que no desaparezcan ni sean gigantes */ 
+    /* Ponemos un tamaño mínimo y máximo para que no desaparezcan ni sean gigantes */
     transition: transform 0.3s ease;
     display: block;
 }
@@ -88,101 +373,6 @@
     transform: scale(1.1);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* --- AJUSTES ICONOS COMO IMAGEN --- */
-
-.material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
-}
-
-
-
-
-
-/* --- AJUSTES ICONOS GENERAL --- */
-
-/* Estilo para los enlaces de los iconos */
-.icon-link {
-    text-decoration: none; /* Quita el subrayado */
-    display: flex;
-    align-items: center;
-}
-
-/* Tamaño de las imágenes de los iconos */
-.nav-icon {
-    width: 20px;  /* Ajusta según el tamaño que desees */
-    height: 20px;
-    transition: transform 0.2s; /* Efecto suave al pasar el ratón */
-}
-
-/* Efecto visual al pasar el ratón (hover) */
-.nav-icon:hover {
-    transform: scale(1.1); /* Hace que el icono crezca un poquito */
-}
-
-
-
-
-
-/* --- BOTÓN VOLVER ARRIBA --- */
-.boton-subir {
-    position: fixed;         /* Se queda fijo en la pantalla */
-    bottom: 30px;            /* Distancia desde abajo */
-    right: 30px;             /* Distancia desde la derecha */
-    width: 50px;
-    height: 50px;
-    background-color: #333;  /* Color del botón */
-    color: #fff;             /* Color de la flecha */
-    border-radius: 50%;      /* Forma circular */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    z-index: 1000;           /* Asegura que esté por encima de todo */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: all 0.3s ease;
-}
-
-.boton-subir:hover {
-    background-color: #000;  /* Se oscurece al pasar el ratón */
-    transform: translateY(-5px); /* Sube un poquito al pasar el ratón */
-}
-
-/* Ajuste del icono dentro del botón */
-.boton-subir .material-symbols-outlined {
-    font-size: 35px;
-    font-weight: bold;
-}
-
-/* EFECTO SUAVE AL SUBIR */
-html {
-    scroll-behavior: smooth; /* Hace que toda la página suba suavemente, no de golpe */
-}
-
-
-
-
-
 /* --- CONTENEDOR DEL FOOTER --- */
 .footer-personalizado {
     width: 100vw;           /* Ocupa el 100% del ancho de la ventana */
@@ -191,9 +381,9 @@ html {
     right: 50%;
     margin-left: -50vw;     /* Estos márgenes negativos lo estiran hacia los lados */
     margin-right: -50vw;
-    margin-top: 50px; /* Crea el espacio arriba del footer */
+    margin-top: 0; /* Crea el espacio arriba del footer */
     background-color: #ff99f2; /* Tu color rosa */
-        padding: 40px 0;
+    padding: 40px 0;
 }
 
 .contenido-centrado-footer {
@@ -246,65 +436,31 @@ html, body {
     overflow-x: hidden; /* Evita el scroll horizontal indeseado */
 }
 
-
-
-
-/* ---ADAPTACIÓN A OTROS FORMATOS--- */
-
-/* Estilos para tablets */
-@media (max-width: 1024px) {
-    .enlace-video {
-        flex: 0 0 calc(50% - 20px); /* Pasa de 4 videos a 2 por fila */
-    }
-    .grid-hashtags {
-        grid-template-columns: repeat(2, 1fr); /* Tendencias en 2 columnas */
-    }
+.boton-subir {
+    position: fixed;         /* Se queda fijo en la pantalla */
+    bottom: 30px;            /* Distancia desde abajo */
+    right: 30px;             /* Distancia desde la derecha */
+    width: 50px;
+    height: 50px;
+    background-color: #333;  /* Color del botón */
+    color: #fff;             /* Color de la flecha */
+    border-radius: 50%;      /* Forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1000;           /* Asegura que esté por encima de todo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
 }
 
-/* Estilos para móviles */
-@media (max-width: 768px) {
-    .grid-hashtags {
-        grid-template-columns: repeat(2, 1fr); /* En móviles pasa a 2 columnas */
-    }
+.boton-subir:hover {
+    background-color: #000;  /* Se oscurece al pasar el ratón */
+    transform: translateY(-5px); /* Sube un poquito al pasar el ratón */
 }
 
-@media (max-width: 480px) {
-    .grid-hashtags {
-        grid-template-columns: 1fr; /* En móviles muy pequeños 1 columna */
-    }
-}
-
-@media (max-width: 480px) {
-    .contenedor-titulo-principal h1 {
-        font-size: 40px; /* Reduce el título "DESCUBRE" para que no se corte */
-    }
-    .enlace-video {
-        flex: 0 0 100%; /* Un video por fila */
-    }
-    
-    .cabecera-seccion {
-        flex-direction: column; /* El título y "Ver todo" se apilan verticalmente */
-        align-items: flex-start;
-    }
-}
-
-/* --- REGLA PARA PANTALLAS PEQUEÑAS HEADER --- */
-@media (max-width: 600px) {
-    .bloque-celda {
-        font-size: 10px;    /* Tamaño mínimo de letra para que sea legible */
-        padding: 0 5px;
-    }
-    .logo-central img {
-        width: 60px;        /* Logo más pequeño en móvil */
-    }
-}
-
-/* Ajuste específico para móviles (iconos header) */
-@media (max-width: 600px) {
-    .grupo-iconos .material-symbols-outlined {
-        font-size: 20px; /* Tamaño fijo cómodo para el dedo en móviles */
-    }
-    .header-container {
-        padding: 10px 20px; /* Menos margen en los lados para ganar espacio */
-    }
+/* Ajuste del icono dentro del botón */
+.boton-subir .material-symbols-outlined {
+    font-size: 35px;
+    font-weight: bold;
 }
