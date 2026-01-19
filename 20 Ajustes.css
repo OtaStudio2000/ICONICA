@@ -27,6 +27,14 @@
     justify-content: center;
     align-items: center;
 }
+.bloque-celda a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: inherit;
+}
+.bloque-celda a:visited {
+    color: inherit;
+}
 
 /* ESTO QUITA EL PUNTO Y PONE LOS ICONOS EN FILA */
 .grupo-iconos {
@@ -77,14 +85,14 @@
 }
 
 /* Animación de agrandado (Hover) */
-.bloque-celda a, .material-symbols-outlined {
+.material-symbols-outlined {
     transition: transform 0.2s ease;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
 }
 
-.bloque-celda a:hover, .material-symbols-outlined:hover {
+.bloque-celda a:hover,.material-symbols-outlined:hover {
     transform: scale(1.1);
 }
 :root {
@@ -252,13 +260,7 @@ body {
     padding: 10px;
     border-radius: 10px;
     transition: var(--transition);
-    cursor: pointer;
 }
-
-.setting-item:hover, .action-item:hover {
-    background-color: var(--secondary-bg);
-}
-
 .setting-text strong {
     display: block;
     margin-bottom: 4px;
@@ -515,14 +517,14 @@ input:checked + .slider:before {
 }
 
 /* Animación de agrandado (Hover) */
-.bloque-celda a, .material-symbols-outlined {
+.material-symbols-outlined {
     transition: transform 0.2s ease;
     cursor: pointer;
     text-decoration: none;
     color: inherit;
 }
 
-.bloque-celda a:hover, .material-symbols-outlined:hover {
+.bloque-celda a:hover,.material-symbols-outlined:hover {
     transform: scale(1.1);
 }
 

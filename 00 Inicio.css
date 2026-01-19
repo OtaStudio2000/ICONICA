@@ -93,8 +93,14 @@ body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6/* añade aquí cualquier clase de título personalizada */{
+/* CORRECCIÓN: Títulos con hover solicitado */
+h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    transition: transform 0.3s ease; /* Para que el agrandado sea suave */
+}
+
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    transform: scale(1.1); /* Se agranda al pasar el ratón */
 }
 
 
@@ -226,7 +232,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', Arial, sans-serif;
+  text-align: center;
 }
 
 /* Navbar */
@@ -381,7 +387,7 @@ h1, h2, h3, h4, h5, h6 {
 .seccion-contenido-entrevistas h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    text-align: left;
+    text-align: center;
 }
 
 
@@ -403,7 +409,7 @@ h1, h2, h3, h4, h5, h6 {
 .seccion-contenido-criticas h2 {
     font-size: 24px;
     margin-bottom: 20px;
-    text-align: left;
+    text-align: center;
 }
 /* Carrusel */
 .carrusel {
@@ -422,7 +428,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
-    gap: 25px;
+    gap: 25px; /* Espacio entre videos */
     padding: 20px 0;
     width: 100%;
     margin: 0 auto;
@@ -441,15 +447,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Grid para las imágenes */
 .grid-videos {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
     gap: 20px; /* Espacio entre las imágenes */
 }
 
-/* Estilo de los enlaces/imágenes */
+/* CORRECCIÓN: Estilo de los enlaces/imágenes para mostrar exactamente 3 */
 .enlace-video {
-    flex: 0 0 23vw;
-    min-width: 220px;
-    max-width: 320px;
+    /* Mostramos 3: 100% dividido por 3, restando el espacio proporcional del gap */
+    flex: 0 0 calc(33.333% - 17px); 
+    min-width: 250px; 
     aspect-ratio: 16/9;
     background-color: #f0f0f0;
     overflow: hidden;
@@ -472,8 +478,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Contenedor que alinea el título y el Ver todo */
 .cabecera-seccion {
+    text-decoration: none;
+    color: inherit;
     display: flex;
-    justify-content: space-between; /* Empuja el título a la izquierda y el link a la derecha */
+    justify-content: center;
     align-items: center;            /* Alinea verticalmente al centro */
     width: 100%;                    /* Ocupa todo el ancho disponible */
     padding: 0 10px;                /* Pequeño margen interno para que no toque los bordes */
@@ -481,34 +489,18 @@ h1, h2, h3, h4, h5, h6 {
     flex-wrap: wrap;                /* Permite que si no hay espacio, baje de línea en móviles muy pequeños */
 }
 
-.cabecera-seccion h2 {
+.cabecera-seccion h2{
     margin: 0;
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: bold;
+    text-align: center;
 }
 
-/* Estilo texto "Ver todo" */
-.enlace-ver-todo {
-    text-decoration: none;         /* Quita el subrayado */
-    color: #666;                   /* Color grisáceo */
-    font-size: 14px;
-    font-weight: 500;
-    transition: color 0.3s;
-    white-space: nowrap;            /* Evita que la frase "Ver todo" se parta en dos líneas */
-    margin-left: 10px;              /* Espacio mínimo respecto al título */
-}
-
-.enlace-ver-todo:hover {
-    color: #000;                   /* Se oscurece al pasar el ratón */
-    text-decoration: underline;    /* Opcional: aparece subrayado al pasar el ratón */
-}
-
+/* (Duplicado mantenido) */
 .enlace-video {
-    /* Calculamos el ancho para que se vean 4 exactamente */
-    /* 100% dividido entre 4, menos el margen del gap */
-    flex: 0 0 calc(25% - 19px); 
-    min-width: 250px; /* Para que no se hagan diminutos en pantallas pequeñas */
-    aspect-ratio: 16 / 9; /* Mantiene el formato cine/TV */
+    flex: 0 0 calc(33.333% - 17px); /* Corregido también aquí para 3 videos */
+    min-width: 250px; 
+    aspect-ratio: 16 / 9; 
     background-color: #f0f0f0;
     overflow: hidden;
 }
@@ -589,9 +581,15 @@ h1, h2, h3, h4, h5, h6 {
 /* Títulos centrados */
 .tendencias h3 {
   text-align: center;
+  font-size: 1.5em;
+  pointer-events: none;
+}
+.tendencias h3:hover {
+    transform: none; /* Desactiva el efecto hover para este título */
 }
 .calendar h3 {
   text-align: center;
+  font-size: 1.5em;
 }
 /* Caja tendencias */
 .tendencias {
@@ -744,13 +742,21 @@ html {
 
 /* Estilos para tablets */
 @media (max-width: 1024px) {
+    /* CORRECCIÓN: Adaptamos el carrusel para que se vean 2 videos en tablet */
+    .enlace-video {
+        flex: 0 0 calc(50% - 15px);
     }
     .grid-hashtags {
         grid-template-columns: repeat(2, 1fr); /* Tendencias en 2 columnas */
     }
+}
 
 /* Estilos para móviles */
 @media (max-width: 768px) {
+    /* CORRECCIÓN: Adaptamos para que se vea 1 video (y asome el segundo) en móvil */
+    .enlace-video {
+        flex: 0 0 85%;
+    }
     .grid-hashtags {
         grid-template-columns: repeat(2, 1fr); /* En móviles pasa a 2 columnas */
     }
@@ -887,4 +893,3 @@ html {
   box-shadow: 0 0 0 1px #eee;
   transform: scale(1.05);
 }
-

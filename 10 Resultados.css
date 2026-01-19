@@ -309,7 +309,7 @@ body {
     padding-bottom: 10%; /* Añade espacio extra abajo para el footer */
 }
 
-/* --- GRID DE 3 COLUMNAS X 5 FILAS --- */
+/* --- GRID --- */
 .grid-resultados {
     display: grid;
     justify-items: center;
