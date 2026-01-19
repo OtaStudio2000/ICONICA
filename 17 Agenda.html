@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICONICA.com</title>
     <link rel="icon" href="https://i.postimg.cc/15ZMdJhB/logo-05-azul.png">
-    <link rel="stylesheet" href="03 Buscar.css">
+    <link rel="stylesheet" href="17 Agenda.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -48,13 +48,122 @@
         </div>
     </header>
 
+    <main class="container">
+        <h1 class="main-title">AGENDA</h1>
 
+        <nav class="filters">
+            <button class="filter-btn">Todos</button>
+            <button class="filter-btn">Workshop</button>
+            <button class="filter-btn">Estrenos</button>
+            <button class="filter-btn">Conciertos</button>
+            <button class="filter-btn">Otros</button>
+        </nav>
 
+        <section class="agenda-grid">
+            <div class="calendar-card">
+                <div class="calendar-header">
+                    <span>&larr; 2025</span>
+                    <h2>ENERO</h2>
+                    <span>2025 &rarr;</span>
+                </div>
+                <div class="calendar-days-header">
+                    <div>LUNES</div><div>MARTES</div><div>MIÉRCOLES</div><div>JUEVES</div><div>VIERNES</div><div>SÁBADO</div><div>DOMINGO</div>
+                </div>
+                <div class="calendar-grid">
+                    <div class="day empty"></div><div class="day empty"></div><div class="day">1</div><div class="day">2</div><div class="day">3</div><div class="day">4</div><div class="day">5</div>
+                    <div class="day highlight">6<span>Workshop de luz en Lux</span></div><div class="day">7</div><div class="day">8</div><div class="day">9</div><div class="day">10</div><div class="day">11</div><div class="day">12</div>
+                    <div class="day">13</div><div class="day highlight">14<span>Teaser de Lux Deluxe</span></div><div class="day">15</div><div class="day">16</div><div class="day">17</div><div class="day">18</div><div class="day highlight">19<span>Estreno de El Cuarto Azul Deluxe</span></div>
+                    <div class="day">20</div><div class="day">21</div><div class="day">22</div><div class="day">23</div><div class="day">24</div><div class="day highlight">25<span>Venta de entradas del LUX Tour</span></div><div class="day">26</div>
+                    <div class="day">27</div><div class="day">28</div><div class="day">29</div><div class="day highlight">30 <span>Concierto de Aitana</span></div><div class="day">31</div><div class="day empty"></div><div class="day empty"></div>
+                </div>
+            </div>
 
+            <aside class="sidebar-list">
+                <h3>APUNTA EN TU AGENDA</h3>
+                <div class="side-item"><strong>6</strong> ENERO <span>Workshop de luz en Lux<br><small>Breve resumen</small></span></div>
+                <hr>
+                <div class="side-item"><strong>14</strong> ENERO <span>Teaser de Lux Deluxe<br><small>Breve resumen</small></span></div>
+                <hr>
+                <div class="side-item"><strong>19</strong> ENERO <span>Estreno de El Cuarto Azul Deluxe<br><small>Breve resumen</small></span></div>
+                <hr>
+                <div class="side-item"><strong>25</strong> ENERO <span>Venta de entradas del LUX Tour<br><small>Breve resumen</small></span></div>
+                <hr>
+                <div class="side-item"><strong>30</strong> ENERO <span>Concierto de Aitana<br><small>Breve resumen</small></span></div>
+            </aside>
+        </section>
 
+        <section class="events-list">
+            <article class="event-card">
+                <div class="event-info">
+                    <h2>WORKSHOP DE LUZ EN LUX</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <div class="event-meta">
+                        <span>Fecha: XX/XX/XX</span>
+                        <span>Precio: XX,XX€</span>
+                        <span>Hora: 00:00</span>
+                        <span>País: XXXXXX</span>
+                    </div>
+                </div>
+                <div class="event-image"><img src="https://fotografias-2.larazon.es/clipping/cmsimages01/2025/07/20/2F8EAF09-8818-44A4-B7B4-B1E99311159E/98.jpg?crop=1920,1080,x0,y180&width=1900&height=1069&optimize=low&format=webply"></div>
+            </article>
 
+            <article class="event-card">
+                <div class="event-info">
+                    <h2>TEASER DE LUX DELUXE</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <div class="event-meta">
+                        <span>Fecha: 15/02/25</span>
+                        <span>Precio: 25,00€</span>
+                        <span>Hora: 21:00</span>
+                        <span>País: España</span>
+                    </div>
+                </div>
+                <div class="event-image"></div>
+            </article>
 
-    
+            <article class="event-card">
+                <div class="event-info">
+                    <h2>ESTRENO DE EL CUARTO AZUL DELUXE</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <div class="event-meta">
+                        <span>Fecha: 10/03/25</span>
+                        <span>Precio: Gratis</span>
+                        <span>Hora: 10:00</span>
+                        <span>País: México</span>
+                    </div>
+                </div>
+                <div class="event-image"></div>
+            </article>
+
+            <article class="event-card">
+                <div class="event-info">
+                    <h2>VENTA DE ENTRADAS DEL LUX TOUR</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <div class="event-meta">
+                        <span>Fecha: 22/04/25</span>
+                        <span>Precio: 12,00€</span>
+                        <span>Hora: 19:30</span>
+                        <span>País: Argentina</span>
+                    </div>
+                </div>
+                <div class="event-image"></div>
+            </article>
+
+            <article class="event-card">
+                <div class="event-info">
+                    <h2>CONCIERTO DE AITANA</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <div class="event-meta">
+                        <span>Fecha: 05/05/25</span>
+                        <span>Precio: 5,00€</span>
+                        <span>Hora: 11:00</span>
+                        <span>País: Chile</span>
+                    </div>
+                </div>
+                <div class="event-image"></div>
+            </article>
+        </section>
+    </main>
 
 <a href="#" class="boton-subir" title="Volver al inicio">
     <span class="material-symbols-outlined">expand_less</span>
