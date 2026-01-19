@@ -94,6 +94,410 @@
 
 
 
+/* --- SEGUNDO BLOQUE --- */
+
+/* --- BASE Y RESET (No cambiar nada de lo existente) --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; padding: 20px; }
+
+/* --- NO CAMBIAR: Estructura Superior --- */
+.header-container {
+    background-color: #ffeabe; 
+    margin: 10px 20px;
+    padding: 15px 80px;
+    border: 1px solid #823f3f;
+    box-sizing: border-box;
+}
+
+.main-container { 
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #222;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+}
+
+.info-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 45px;
+    padding: 20px 35px;
+    margin-top: -15px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* --- BLOQUE INFERIOR: COMPRIMIDO Y ALINEADO --- */
+/* Usamos el mismo max-width que main-container para alinear */
+.layout-container {
+    display: grid;
+    /* Mantenemos tus proporciones: 1.8 para carpetas, 1 para reviews */
+    grid-template-columns: 1.8fr 1fr; 
+    gap: 30px; 
+    max-width: 1000px; 
+    margin: 20px auto; /* Reducimos el margen superior para que pegue más a la info-card */
+    
+    /* ESTA ES LA LÍNEA CLAVE: Alinea ambos bloques al inicio (arriba) */
+    align-items: start; 
+}
+
+.folder-section {
+    margin: 0;
+}
+
+
+/* Sistema de Carpetas Comprimido */
+.tab-wrapper { display: flex; flex-wrap: wrap; }
+.tab-wrapper input[type="radio"] { display: none; }
+
+.tab-label {
+    padding: 8px 20px; /* Más pequeño */
+    border: 1px solid #000;
+    border-bottom: none;
+    border-radius: 12px 12px 0 0;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.8rem;
+    background: white;
+    margin-right: 4px;
+}
+
+.folder-body {
+    width: 100%;
+    border: 1px solid #000;
+    background: white;
+    min-height: 350px; /* Altura más compacta */
+    padding: 20px;
+    border-radius: 0 15px 15px 15px;
+}
+
+/* Ocultamos todo el contenido por defecto */
+.folder-content {
+    display: none;
+    animation: fadeIn 0.3s ease; /* Efecto suave al aparecer */
+}
+
+/* Solo mostramos el contenido que coincida con el input seleccionado */
+#video:checked ~ .folder-body #content-video {
+    display: block;
+}
+
+#audio:checked ~ .folder-body #content-audio {
+    display: block;
+}
+
+#edicion:checked ~ .folder-body #content-edicion {
+    display: block;
+}
+
+#arte:checked ~ .folder-body #content-arte {
+    display: block;
+}
+
+/* Efecto visual de pestaña activa */
+#video:checked ~ label[for="video"],
+#audio:checked ~ label[for="audio"],
+#edicion:checked ~ label[for="edicion"],
+#arte:checked ~ label[for="arte"] {
+    background: #e3f2fd; /* Azul clarito igual que las reviews */
+    border-bottom: 2px solid #e3f2fd; /* Elimina la línea visual con el cuerpo */
+    transform: translateY(1px); /* Efecto de que la carpeta está "abierta" */
+}
+
+/* Estilo extra para el texto dentro de las carpetas */
+.placeholder-text {
+    font-size: 0.9rem;
+    color: #444;
+    padding: 10px;
+    font-style: italic;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Lógica de pestañas */
+#video:checked ~ label[for="video"],
+#audio:checked ~ label[for="audio"],
+#edicion:checked ~ label[for="edicion"],
+#arte:checked ~ label[for="arte"] {
+    background: #f0f0f0;
+}
+
+.staff-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.staff-card { display: flex; align-items: center; gap: 10px; }
+.staff-avatar {
+    width: 45px; height: 45px; /* Reducido */
+    border-radius: 50%;
+    border: 1px solid #000;
+    background: #e0e0e0;
+    flex-shrink: 0;
+}
+
+.staff-info strong { display: block; font-size: 0.85rem; }
+.staff-info span { font-size: 0.7rem; color: #666; }
+
+/* Reviews Estrechas */
+.reviews-section {
+    display: flex;
+    flex-direction: column; /* Apila las reviews una debajo de otra */
+    gap: 15px;
+    background: transparent; /* Hace el contenedor invisible */
+    border: none;            /* Quita cualquier borde del contenedor */
+    padding: 0;
+    margin: 0;
+}
+
+.review-item {
+    display: flex; /* Alinea imagen y texto en horizontal dentro de la tarjeta */
+    flex-direction: row; 
+    text-decoration: none;
+    color: inherit;
+    border: 1px solid #000;
+    border-radius: 15px; /* Curva menos pronunciada */
+    padding: 10px 15px;
+    background: white;
+    align-items: flex-start; /* ALINEACIÓN PARALELA AL BORDE SUPERIOR */
+    gap: 15px; 
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.review-img-box {
+    width: 90px; height: 65px; /* Miniatura más pequeña para la columna estrecha */
+    border: 1px solid #000;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.review-thumb {
+    width: 90px; 
+    height: 60px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0; /* Evita que la imagen se encoja */
+}
+.review-thumb img { width: 100%; height: 100%; object-fit: cover; }
+
+.review-data h3 { 
+    font-size: 0.95rem; 
+    margin: 0; /* Elimina márgenes extra para alinear al borde superior */
+    padding: 0;
+    color: #000;
+    line-height: 1.2;
+}
+.review-data p { 
+    font-size: 0.7rem; 
+    color: #555; 
+    margin-top: 4px; /* Pequeño espacio bajo el título */
+    line-height: 1.2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* EFECTO HOVER: Azul claro y agrandado */
+.review-item:hover {
+    background-color: #e3f2fd; /* Azul clarito */
+    transform: scale(1.03); /* Se agranda un poco */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Sombra suave para resaltar */
+}
+
+.review-thumb {
+    width: 100px; 
+    height: 65px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0; /* Evita que la imagen se deforme */
+}
+
+.review-thumb img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.review-data {
+    display: flex;
+    flex-direction: column; /* Título arriba, subtítulo debajo */
+    text-align: left;
+}
+
+.review-data h3 { 
+    font-size: 0.95rem; 
+    margin-bottom: 3px; 
+    color: #000;
+}
+
+.review-data p { 
+    font-size: 0.7rem; 
+    color: #555; 
+    line-height: 1.2;
+    /* Limitamos a 2 líneas para mantener la compresión */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* RESPONSIVO MÓVIL */
+@media (max-width: 600px) {
+    .review-item:hover {
+        transform: none; /* Quitamos el agrandado en móvil para evitar saltos */
+    }
+}
+
+/* --- ADAPTACIÓN (RESPONSIVE) --- */
+@media (max-width: 992px) {
+    .layout-container {
+        grid-template-columns: 1fr; /* Una columna en tablet/móvil */
+        width: 95%;
+    }
+}
+
+@media (max-width: 600px) {
+    .staff-grid { grid-template-columns: 1fr; }
+    .review-item { border-radius: 20px; }
+}
+
+
+
+
+
+
+
+
+
+/* Contenedor General */
+.seccion-recomendados {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* --- CÁPSULA AZUL --- */
+.capsula-azul {
+    background-color: #e3f2fd; /* Azul claro */
+    border-radius: 100px;      /* Bordes completamente curvos */
+    padding: 30px 50px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.titulo-recomendados {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+/* Alineación de los 8 círculos */
+.lista-perfiles {
+    display: flex;
+    justify-content: space-between; /* Distribuye espacio igual entre círculos */
+    gap: 15px;
+    flex-wrap: wrap; /* Para que bajen de fila en móviles */
+}
+
+.circulo-artista {
+    width: 100px;  /* Tamaño fijo para todos */
+    height: 100px; /* Tamaño fijo para todos */
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #ccc;
+    border: 2px solid white;
+    transition: transform 0.3s ease;
+}
+
+.circulo-artista img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto se deforme */
+}
+
+.circulo-artista:hover {
+    transform: scale(1.1); /* Efecto de crecimiento al pasar el ratón */
+}
+
+/* --- ETIQUETAS INFERIORES --- */
+.contenedor-etiquetas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fila-tags {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tag-boton {
+    text-decoration: none;
+    color: #333;
+    background-color: white;
+    border: 1.5px solid #333;
+    border-radius: 50px;
+    padding: 8px 30px;
+    min-width: 150px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.tag-boton:hover {
+    background-color: #ff8c00; /* Naranja al pasar el ratón */
+    color: white;
+    border-color: #ff8c00;
+}
+
+/* --- ADAPTABILIDAD --- */
+@media (max-width: 768px) {
+    .capsula-azul {
+        border-radius: 40px; /* Curvatura menor en móvil */
+        padding: 20px;
+    }
+    .lista-perfiles {
+        justify-content: center;
+    }
+    .circulo-artista {
+        width: 70px;
+        height: 70px;
+    }
+    .tag-boton {
+        min-width: 100px;
+        padding: 6px 15px;
+        font-size: 0.8rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Reseteo y Base */
@@ -103,22 +507,25 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; padding:
 .main-container { max-width: 1000px; margin: 0 auto; }
 
 /* Video Responsivo */
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
+.image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Esto obliga a que siempre sea formato video */
+    background: #222;
     border-radius: 15px 15px 0 0;
+    overflow: hidden;
 }
-.video-container iframe {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+.cover-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que rellene el espacio sin estirarse */
+    display: block;
 }
 
 /* Tarjeta de Información */
 .info-card {
     background: white;
     border: 1px solid #ddd;
-    border-radius: 45px; /* Curva pronunciada de la imagen */
+    border-radius: 20px; /* Curva pronunciada de la imagen */
     padding: 20px 35px;
     margin-top: -15px;
     position: relative;
@@ -130,7 +537,7 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; padding:
 
 .avatar {
     width: 65px; height: 65px;
-    border-radius: 50%;
+    border-radius: 20%;
     border: 1px solid #999;
     overflow: hidden;
     flex-shrink: 0;
