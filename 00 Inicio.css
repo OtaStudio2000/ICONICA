@@ -496,7 +496,6 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-/* (Duplicado mantenido) */
 .enlace-video {
     flex: 0 0 calc(33.333% - 17px); /* Corregido también aquí para 3 videos */
     min-width: 250px; 
