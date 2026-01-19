@@ -426,23 +426,7 @@ body {
     line-height: 1.5;
 }
 
-/* BOTÓN "VER MÁS" (Dirección distinta) */
-.ver-mas-link {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    z-index: 10; /* Asegura que esté por encima del enlace de la caja */
-    font-size: 0.9rem;
-    color: #e65100;
-    font-weight: bold;
-    text-decoration: none;
-    padding: 5px 10px;
-}
-
-.ver-mas-link:hover {
-    text-decoration: underline;
-    color: #bf360c; /* Naranja más oscuro al pasar el ratón */
-}    
+    
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
@@ -570,6 +554,118 @@ body {
 
 
 
+/* --- CONFIGURACIÓN DE VIDEO --- */
+.video-reproductor {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.video-reproductor iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* --- PANEL DE INFORMACIÓN --- */
+.panel-info {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border: 1.5px solid #333;
+    border-radius: 100px; /* Curvatura horizontal */
+    padding: 15px 30px;
+    gap: 20px;
+}
+
+.avatar-artista {
+    flex: 0 0 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.avatar-artista img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.contenido-detalles { flex: 1; }
+
+.fila-superior, .fila-inferior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nombre-video { font-size: 1.4rem; margin: 0; }
+.nombre-cantante { font-size: 0.9rem; color: #666; margin: 0; }
+
+/* --- BOTONES E ICONOS --- */
+.iconos-accion { display: flex; gap: 15px; align-items: center; }
+
+.icono-zoom {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: #333;
+}
+
+.icono-zoom:hover { transform: scale(1.3); }
+
+.btn-pais {
+    border: 1.5px solid #333;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+.btn-seguir {
+    border: 1.5px solid #333;
+    background: white;
+    border-radius: 20px;
+    padding: 3px 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.emoticonos { display: flex; gap: 10px; margin-left: 15px; font-size: 1.2rem; }
+.emo { cursor: pointer; transition: 0.3s; padding: 2px; border-radius: 50%; }
+
+.hashtags-enlaces a {
+    font-size: 0.8rem;
+    color: #333;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.hashtags-enlaces a:hover { text-decoration: underline; }
+
+/* --- ADAPTACIÓN (RESPONSIVE) --- */
+@media (max-width: 1024px) { /* Tablet */
+    .panel-info { border-radius: 40px; padding: 15px; }
+}
+
+@media (max-width: 600px) { /* Móvil */
+    .panel-info { 
+        flex-direction: column; 
+        border-radius: 25px; 
+        text-align: center; 
+    }
+    .fila-superior, .fila-inferior { 
+        flex-direction: column; 
+        gap: 15px; 
+    }
+    .iconos-accion { order: -1; } /* Iconos arriba en móvil */
+}
 
 
 
