@@ -13,49 +13,30 @@
 </head>
 <body>
 
-    <nav> 
+    <nav class="nav-principal"> 
         <div class="header-container">
-            <nav class="tabla-header">
-                
-                    <div class="bloque-celda">
-                        <a href="01 Clipscharts.html">CLIPSCHARTS</a>
-                    </div>
-
-                    <div class="bloque-celda">
-                        <a href="02 Descubre.html">DESCUBRE</a>
-                    </div>
-
-                    <div class="bloque-celda logo-central">
-                        <a href="00 Inicio.html">
-                            <img src="https://i.postimg.cc/bYSFWZGZ/logo-2-rosa.png" alt="Logo">
-                        </a>
-                    </div>
-
-                    <div class="bloque-celda">
-                        <a href="04 Unete.html">ÚNETE</a>
-                    </div>
-
-                    <div class="bloque-celda grupo-iconos">
-                       
-                            <a href="03 Buscar.html" class="icon-link">
-                                <span class="material-symbols-outlined">search</span>
-                            </a>
-                   
-                            <a href="05 Usuario.html" class="icon-link">
-                                <span class="material-symbols-outlined">account_circle</span>                           
-                            </a>
-                     
-                    </div>
-             
-            </nav>
+            <div class="tabla-header">
+                <div class="bloque-celda"><a href="01 Clipscharts.html">CLIPSCHARTS</a></div>
+                <div class="bloque-celda"><a href="02 Descubre.html">DESCUBRE</a></div>
+                <div class="bloque-celda logo-central">
+                    <a href="00 Inicio.html">
+                        <img src="https://i.postimg.cc/bYSFWZGZ/logo-2-rosa.png" alt="Logo">
+                    </a>
+                </div>
+                <div class="bloque-celda"><a href="04 Unete.html">ÚNETE</a></div>
+                <div class="bloque-celda grupo-iconos">
+                    <a href="03 Buscar.html" class="icon-link"><span class="material-symbols-outlined">search</span></a>
+                    <a href="05 Usuario.html" class="icon-link"><span class="material-symbols-outlined">account_circle</span></a>
+                </div>
+            </div>
         </div>
     </nav>
 
-    <div class="container">
-        <header class="header-profile">
-            <div class="banner">
-                <span class="material-symbols-outlined">wand_stars</span>
-            </div>
+    <header class="header-profile-full">
+        <div class="banner">
+            <span class="material-symbols-outlined">wand_stars</span>
+        </div>
+        <div class="profile-card-container">
             <div class="profile-card">
                 <div class="avatar">
                     <span class="material-symbols-outlined">wand_stars</span>
@@ -68,13 +49,13 @@
                     </div>
                 </div>
             </div>
-        </header>
+        </div>
+    </header>
 
+    <div class="container">
         <main class="settings-content">
-            
             <section class="settings-group">
                 <h2 class="section-title">NOTIFICACIONES</h2>
-                
                 <div class="setting-item">
                     <label class="toggle-switch">
                         <input type="checkbox" checked>
@@ -85,7 +66,6 @@
                         <p>Recibir avisos cuando alguien interactúe con tus clips o publicaciones compartidas.</p>
                     </div>
                 </div>
-
                 <div class="setting-item">
                     <label class="toggle-switch">
                         <input type="checkbox">
@@ -100,7 +80,6 @@
 
             <section class="settings-group">
                 <h2 class="section-title">PRIVACIDAD</h2>
-                
                 <div class="setting-item">
                     <label class="toggle-switch">
                         <input type="checkbox" checked>
@@ -111,7 +90,6 @@
                         <p>Nadie podrá ver tus contenidos y lista de seguidores.</p>
                     </div>
                 </div>
-
                 <div class="setting-item">
                     <label class="toggle-switch">
                         <input type="checkbox">
@@ -122,75 +100,53 @@
                         <p>Permitir la recolección de información pública por parte de terceros.</p>
                     </div>
                 </div>
-
-                <div class="setting-item">
-                    <label class="toggle-switch">
-                        <input type="checkbox" checked>
-                        <span class="slider"></span>
-                    </label>
-                    <div class="setting-text">
-                        <strong>Recomendaciones personalizadas</strong>
-                        <p>Usar tu historial de navegación para sugerir contenido que te pueda gustar.</p>
-                    </div>
-                </div>
             </section>
 
             <section class="settings-group">
                 <h2 class="section-title">CUENTA</h2>
-                <div class="action-item email-change-container">
+                <div class="action-item">
                     <span class="material-symbols-outlined">wand_stars</span>
                     <div class="setting-text">
                         <strong>Cambiar correo electrónico</strong>
                         <p>Actualiza tu dirección de correo electrónico principal para migrar la cuenta.</p>
-                        
                         <div class="input-group">
                             <input type="email" placeholder="nuevo-correo@ejemplo.com" class="custom-input">
                             <button type="button" class="btn-ok">OK</button>
                         </div>
                     </div>
                 </div>
-                <div class="action-item email-change-container">
+
+                <div class="action-item">
                     <span class="material-symbols-outlined">wand_stars</span>
                     <div class="setting-text">
                         <strong>Cambiar contraseña</strong>
                         <p>Cambia la contraseña a una nueva en caso de haberla olvidado o perdido.</p>
-                        
                         <div class="input-group">
-                            <input type="password" placeholder="contraseña" class="custom-input">
+                            <input type="password" placeholder="Nueva contraseña" class="custom-input">
                             <button type="button" class="btn-ok">OK</button>
                         </div>
                     </div>
                 </div>
             </section>
-
         </main>
-
     </div>
 
     <footer class="footer-personalizado">
         <div class="contenido-centrado-footer">
-        
             <div class="redes-sociales">
-                <a href="https://twitter.com/tu_usuario" target="_blank" class="enlace-social">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-                </a>
-                <a href="https://facebook.com/tu_usuario" target="_blank" class="enlace-social">
-                    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
-                </a>
-                <a href="https://instagram.com/tu_usuario" target="_blank" class="enlace-social">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram">
-                </a>
-                <a href="https://tiktok.com/@tu_usuario" target="_blank" class="enlace-social">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok">
-                </a>
+                <a href="#" class="enlace-social"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
+                <a href="#" class="enlace-social"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+                <a href="#" class="enlace-social"><img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Instagram"></a>
+                <a href="#" class="enlace-social"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png" alt="TikTok"></a>
             </div>
-
             <div class="info-legal">
                 <p>© ICONICA.com - Todos los derechos reservados</p>
             </div>
-
         </div>
     </footer>
-    
+
+    <a href="#" class="boton-subir">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </a>
 </body>
 </html>
