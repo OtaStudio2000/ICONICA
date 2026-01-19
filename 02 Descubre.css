@@ -98,23 +98,22 @@
 
 /* Espacio del título */
 .contenedor-titulo-principal {
-    width: 100%;           /* Ocupa todo el ancho */
-    padding: 80px 0;       /* Mucho espacio arriba y abajo para que esté "a parte" */
-    display: flex;         /* Usamos flexbox para centrarlo */
-    justify-content: center; 
-    align-items: center;
+    width: 100%;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
-/* Estilo del texto del título */
 .contenedor-titulo-principal h1 {
-    font-size: 80px;       /* Tamaño muy grande */
-    font-weight: bold;     /* Negrita */
-    letter-spacing: 5px;   /* Espaciado entre letras para un toque moderno */
-    text-transform: uppercase; /* Asegura que esté en mayúsculas */
-    margin: 0;             /* Quitamos márgenes por defecto */
-    color: #000;           /* Color negro puro */
+    font-size: clamp(40px, 8vw, 80px); /* CLAMP: Se escala entre 40px y 80px automáticamente */
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #000;
+    line-height: 1.1;
 }
-
 
 
 
@@ -563,11 +562,16 @@ html, body {
 
 /* Estilos para tablets */
 @media (max-width: 1024px) {
-    .enlace-video {
-        flex: 0 0 calc(50% - 20px); /* Pasa de 4 videos a 2 por fila */
+    .grid-videos {
+        grid-template-columns: repeat(2, 1fr); /* De 4 pasa a 2 columnas */
     }
+    
     .grid-hashtags {
-        grid-template-columns: repeat(2, 1fr); /* Tendencias en 2 columnas */
+        grid-template-columns: repeat(2, 1fr); /* De 4 pasa a 2 columnas */
+    }
+    
+    .contenedor-titulo-principal h1 {
+        font-size: 60px; /* Reducimos título */
     }
 }
 
@@ -598,6 +602,12 @@ html, body {
     }
 }
 
+.grid-videos {
+        gap: 15px;
+    }
+
+    
+
 /* --- REGLA PARA PANTALLAS PEQUEÑAS --- */
 @media (max-width: 600px) {
     .bloque-celda {
@@ -610,7 +620,8 @@ html, body {
 }
 
 /* Ajuste específico para móviles (iconos header) */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
+    /* Header: Layout cambia */
     .grupo-iconos .material-symbols-outlined {
         font-size: 20px; /* Tamaño fijo cómodo para el dedo en móviles */
     }
