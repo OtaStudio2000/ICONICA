@@ -56,84 +56,232 @@ body {
     padding-bottom: 50px;
 }
 
-/* Header & Profile */
-.header-profile {
+/* --- ESTILO DE CABECERA REFINADO --- */
+
+.header-profile-full {
+    width: 100%;
     position: relative;
-    margin-bottom: 80px;
+    margin-bottom: 20px;
 }
 
 .banner {
-    background-color: #d1d1d1;
-    height: 180px;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    color: #999;
-    border-bottom: 1px solid var(--border-color);
-    /* Simulación de las líneas del wireframe */
-    background-image: 
-        linear-gradient(to top right, transparent 49.5%, #bbb 49.5%, #bbb 50.5%, transparent 50.5%),
-        linear-gradient(to top left, transparent 49.5%, #bbb 49.5%, #bbb 50.5%, transparent 50.5%);
+    height: 300px; /* Un poco más de aire para el banner */
+    overflow: hidden;
 }
 
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- TARJETA DE PERFIL --- */
 .profile-card {
-    position: absolute;
-    bottom: -60px;
-    left: 20px;
-    right: 20px;
+    position: relative;
+    margin-top: -70px;
     background: white;
-    border: 1px solid var(--border-color);
-    border-radius: 50px;
+    border: 1px solid #ddd;
+    border-radius: 90px;
     display: flex;
     align-items: center;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 15px 45px 15px 15px; /* Más espacio a la derecha para el botón país */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    z-index: 10;
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
-    background: #e0e0e0;
+    width: 140px; /* Avatar ligeramente más grande */
+    height: 140px;
     border-radius: 50%;
-    border: 3px solid white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: #888;
-    position: absolute;
-    left: 0;
-    bottom: 0;
+    border: 6px solid white;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
 }
 
+.avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- CONTENEDOR DE INFORMACIÓN --- */
 .profile-info {
-    margin-left: 110px;
+    flex: 1;
+    /* REDUCIDO: Acerca el texto al avatar */
+    margin-left: 12px; 
+}
+
+.info-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espacio vertical reducido entre nombre y seguidores */
+    width: 100%;
+}
+
+/* Fila de arriba: Nombre e Icono */
+.fila-superior {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre el texto y el icono */
+}
+
+.name-text {
+    font-weight: bold;
+    font-size: 1.9rem; /* Nombre más imponente */
+    color: #000;
+    line-height: 1;
+}
+
+/* Icono de Ajustes más grande */
+.settings-icon {
+    font-size: 2.2rem; /* Aumentado sustancialmente */
+    color: #333;
+    cursor: pointer;
+    font-weight: 300; /* Hace que el trazo del engranaje sea más fino y elegante */
+}
+
+/* Fila de abajo: Seguidores y País */
+.fila-inferior {
     display: flex;
     justify-content: space-between;
-    width: 100%;
     align-items: center;
-    padding-right: 20px;
+    width: 100%;
 }
 
-.name {
+.followers-pill {
+    border: 1.5px solid #000;
+    padding: 4px 22px;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+    .profile-card {
+        flex-direction: column;
+        border-radius: 40px;
+        padding: 20px;
+        margin-top: -80px;
+    }
+    .profile-info {
+        margin-left: 0;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+    .info-right {
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+/* Tipografía y elementos internos */
+.name-text {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
 }
 
-.badge-container {
+.settings-icon {
+    font-size: 1.4rem;
+    color: #666;
+    cursor: pointer;
+    margin-left: 8px;
+}
+
+.followers-pill {
+    display: inline-block;
+    border: 1.5px solid #333;
+    padding: 3px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 6px;
+    color: #333;
+}
+
+.country-pill {
+    background-color: #000; /* Fondo negro para que resalte más el país */
+    color: #fff;
+    padding: 6px 22px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Ajuste automático para el contenido de abajo (Historial) */
+.contenedor-principal {
+    margin-top: 40px; /* Espacio de cortesía después de la tarjeta de perfil */
+}
+
+/* --- TÍTULO HISTORIAL (Corrección de posición) --- */
+.bloque-contenido {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.subtitulo-ayer {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+/* Fila de Nombre y Ajustes */
+.name-row {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.country-pill {
-    border: 1px solid var(--accent-color);
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.7rem;
+.name-text {
     font-weight: bold;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+
+.settings-icon {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Píldora de seguidores */
+.followers-pill {
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 2px 20px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-top: 5px;
+}
+
+/* Píldora de País (Derecha) */
+.country-pill {
+    border: 1px solid #000;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Responsive para que no se rompa la píldora en móvil */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        border-radius: 30px;
+        padding: 20px;
+        top: -80px;
+    }
+    .profile-info {
+        margin-left: 0;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .name-row { justify-content: center; }
 }
 
 /* Responsive */
@@ -160,8 +308,6 @@ body {
         margin-bottom: 130px;
     }
 }
-
-/* ... (mantener el CSS anterior y añadir lo siguiente) ... */
 
 .email-change-container {
     cursor: default; /* Evitamos el puntero de clic en todo el contenedor para no confundir */
@@ -265,16 +411,10 @@ body {
 .banner {
     width: 100%;
     height: 250px;
-    background-color: #d1d1d1;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: 
-        linear-gradient(to top right, transparent 49.8%, #bbb 49.8%, #bbb 50.2%, transparent 50.2%),
-        linear-gradient(to top left, transparent 49.8%, #bbb 49.8%, #bbb 50.2%, transparent 50.2%);
 }
-
-.banner .material-symbols-outlined { font-size: 4rem; color: #999; }
 
 /* Contenedor para centrar la tarjeta del perfil */
 .profile-card-container {
@@ -333,9 +473,6 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
-
-
-
 
 /* Listas */
 .contenedor-lo-mas-visto {
@@ -736,6 +873,7 @@ h1, h2, h3, h4, h5, h6/* añade aquí cualquier clase de título personalizada *
     text-decoration: none; /* Quita el subrayado */
     display: flex;
     align-items: center;
+    color: #333
 }
 
 /* Tamaño de las imágenes de los iconos */
@@ -883,4 +1021,18 @@ html, body {
     .header-container {
         padding: 10px 20px; /* Menos margen en los lados para ganar espacio */
     }
+}
+
+
+.icono-usuario {
+    width: 28px;   /* Ajusta el tamaño según tu diseño */
+    height: 28px;
+    border-radius: 50%; /* Opcional, si quieres que sea circular */
+    object-fit: cover;
+}
+
+.profile-info .name {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espacio entre icono y nombre */
 }

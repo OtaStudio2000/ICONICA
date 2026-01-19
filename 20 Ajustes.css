@@ -151,12 +151,7 @@ h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: 
-        linear-gradient(to top right, transparent 49.8%, #bbb 49.8%, #bbb 50.2%, transparent 50.2%),
-        linear-gradient(to top left, transparent 49.8%, #bbb 49.8%, #bbb 50.2%, transparent 50.2%);
 }
-
-.banner .material-symbols-outlined { font-size: 4rem; color: #999; }
 
 /* Contenedor para centrar la tarjeta del perfil */
 .profile-card-container {
@@ -170,7 +165,6 @@ h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
     position: absolute;
     top: -50px; /* Sube la tarjeta para que tape parte del banner */
     width: 100%;
-    background: white;
     border: 1px solid var(--border-color);
     border-radius: 60px;
     display: flex;
