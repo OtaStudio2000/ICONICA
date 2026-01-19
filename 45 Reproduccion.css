@@ -1,0 +1,432 @@
+/* --- HEADER ---*/ 
+
+/* --- CONTENEDOR DEL RECTÁNGULO AMARILLO --- */
+.header-container {
+    background-color: #ffeabe; 
+    margin: 10px 20px;         /* Margen externo para que el rectángulo no toque el borde del navegador */
+    padding: 15px 80px;       /* MARGEN LATERAL INTERNO: Esto separa CLIPSCHARTS e Iconos de los bordes */
+    border: 1px solid #823f3f;
+    box-sizing: border-box;
+}
+
+/* Configuramos la "fila" de la tabla */
+.tabla-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    list-style: none; /* Elimina puntos si usaste <ul> */
+}
+
+/* Cada celda de la tabla */
+.bloque-celda {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ESTO QUITA EL PUNTO Y PONE LOS ICONOS EN FILA */
+.grupo-iconos {
+    display: flex;       /* Los pone uno al lado del otro */
+    gap: 15px;           /* Espacio entre la lupa y el usuario */
+    justify-content: flex-end; /* Los pega al borde derecho del header */
+}
+
+/* Quitamos cualquier decoración de lista que pueda venir de otro lado */
+.grupo-iconos a, .grupo-iconos span {
+    text-decoration: none;
+    list-style-type: none; /* Asegura que no haya puntos */
+    display: flex;
+    align-items: center;
+}
+
+/* Iconos de Google Material */
+.material-symbols-outlined {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Bloque 5: Contenedor de iconos */
+.grupo-iconos {
+    display: flex !important;
+    flex-direction: row !important; /* Siempre en horizontal */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1vw; /* El espacio entre ellos también se encoge */
+    list-style: none !important;
+}
+
+/* Tamaño elástico de los iconos */
+.grupo-iconos .material-symbols-outlined {
+    /* La unidad 'vw' hace que el icono sea más pequeño si la ventana se estrecha */
+    font-size: 2vw; 
+    /* Ponemos un tamaño mínimo y máximo para que no desaparezcan ni sean gigantes */    
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+/* Bloque del logo: le damos un poco más de importancia si quieres */
+.logo-central img {
+    height: auto;
+    max-width: 90%;         /* El logo también se hace pequeño con la celda */
+    width: 120px;           /* Tamaño máximo */
+}
+
+/* Animación de agrandado (Hover) */
+.bloque-celda a, .material-symbols-outlined {
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+}
+
+.bloque-celda a:hover, .material-symbols-outlined:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+/* Reseteo y Base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f0f2f5; padding: 20px; }
+
+.main-container { max-width: 1000px; margin: 0 auto; }
+
+/* Video Responsivo */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+}
+.video-container iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+}
+
+/* Tarjeta de Información */
+.info-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 45px; /* Curva pronunciada de la imagen */
+    padding: 20px 35px;
+    margin-top: -15px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+/* Fila Superior */
+.row-top { display: flex; align-items: center; gap: 15px; }
+
+.avatar {
+    width: 65px; height: 65px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+.avatar img { width: 100%; height: 100%; object-fit: cover; }
+
+.video-title { font-size: 1.3rem; font-weight: bold; }
+.artist-name { font-size: 0.85rem; color: #666; }
+
+.top-icons { margin-left: auto; display: flex; gap: 20px; align-items: center; }
+
+/* Botón País y Iconos Zoom */
+.btn-pais {
+    text-decoration: none; color: black; border: 2px solid black;
+    padding: 4px 15px; border-radius: 20px; font-weight: bold; font-size: 0.8rem;
+}
+.zoom-btn {
+    background: none; border: none; cursor: pointer; font-size: 1.2rem;
+    transition: transform 0.2s;
+}
+.zoom-btn:active { transform: scale(1.4); } /* Zoom al hacer click */
+
+/* Fila Inferior */
+.row-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-top: 15px;
+}
+
+.social-zone { display: flex; align-items: center; gap: 15px; }
+
+/* BOTÓN SEGUIR (CSS PURO) */
+.hidden-check { display: none; } /* Ocultamos los checkbox reales */
+
+.btn-seguir-label {
+    border: 2px solid #000;
+    padding: 3px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900; /* Extra negrita */
+    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+.btn-seguir-label::before { content: "SEGUIR"; }
+#checkSeguir:checked + .btn-seguir-label::before { content: "SIGUIENDO"; }
+#checkSeguir:checked + .btn-seguir-label { background: #eee; }
+
+.followers { font-size: 0.8rem; color: #777; }
+
+.followers, .hashtags-zone a {
+    color: #a0a0a0; /* Gris claro como la imagen */
+    font-size: 0.75rem;
+    text-decoration: none;
+}
+
+/* EMOJIS (CSS PURO) */
+.emoji-btn {
+    color: #ccc; 
+    cursor: pointer;
+    margin: 0 2px;
+}
+
+#brokenHeart:checked + label .emoji-btn { color: #555; }   /* Corazón roto - Gris oscuro/Negro */
+#fullHeart:checked + label .emoji-btn { color: #ff4d4d; }  /* Corazón - Rojo/Rosa */
+#star:checked + label .emoji-btn { color: #ffcc00; }       /* Estrella - Amarillo */
+/* Hashtags */
+.hashtags-zone a {
+    text-decoration: none; color: #888; font-size: 0.8rem; margin-left: 10px;
+}
+.hashtags-zone a:hover { color: blue; }
+
+.top-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: bold;
+}
+
+.btn-pais {
+    border: none; /* En tu imagen no parece tener borde, solo texto bold */
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+/* 4. Efecto de reacción al pasar el ratón (Hover) */
+.video-title:hover, .artist-name:hover, .hashtags-zone a:hover {
+    color: #000;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .info-card { border-radius: 25px; padding: 15px; }
+    .row-top { flex-wrap: wrap; }
+    .top-icons { width: 100%; justify-content: flex-end; order: 3; margin-top: 10px; }
+    .row-bottom { flex-direction: column; align-items: flex-start; gap: 15px; }
+    .hashtags-zone { align-self: flex-end; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- AJUSTES ICONOS COMO IMAGEN --- */
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+
+
+
+/* --- AJUSTES ICONOS GENERAL --- */
+
+/* Estilo para los enlaces de los iconos */
+.icon-link {
+    text-decoration: none; /* Quita el subrayado */
+    display: flex;
+    align-items: center;
+}
+
+/* Tamaño de las imágenes de los iconos */
+.nav-icon {
+    width: 20px;  /* Ajusta según el tamaño que desees */
+    height: 20px;
+    transition: transform 0.2s; /* Efecto suave al pasar el ratón */
+}
+
+/* Efecto visual al pasar el ratón (hover) */
+.nav-icon:hover {
+    transform: scale(1.1); /* Hace que el icono crezca un poquito */
+}
+
+
+
+
+
+/* --- BOTÓN VOLVER ARRIBA --- */
+.boton-subir {
+    position: fixed;         /* Se queda fijo en la pantalla */
+    bottom: 30px;            /* Distancia desde abajo */
+    right: 30px;             /* Distancia desde la derecha */
+    width: 50px;
+    height: 50px;
+    background-color: #333;  /* Color del botón */
+    color: #fff;             /* Color de la flecha */
+    border-radius: 50%;      /* Forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1000;           /* Asegura que esté por encima de todo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.boton-subir:hover {
+    background-color: #000;  /* Se oscurece al pasar el ratón */
+    transform: translateY(-5px); /* Sube un poquito al pasar el ratón */
+}
+
+/* Ajuste del icono dentro del botón */
+.boton-subir .material-symbols-outlined {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* EFECTO SUAVE AL SUBIR */
+html {
+    scroll-behavior: smooth; /* Hace que toda la página suba suavemente, no de golpe */
+}
+
+
+
+
+
+/* --- CONTENEDOR DEL FOOTER --- */
+.footer-personalizado {
+    width: 100vw;           /* Ocupa el 100% del ancho de la ventana */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;     /* Estos márgenes negativos lo estiran hacia los lados */
+    margin-right: -50vw;
+    margin-top: 50px; /* Crea el espacio arriba del footer */
+    background-color: #ff99f2; /* Tu color rosa */
+        padding: 40px 0;
+}
+
+.contenido-centrado-footer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+/* --- LOGOS DE REDES SOCIALES --- */
+.redes-sociales {
+    display: flex;
+    gap: 25px; /* Espacio entre logos */
+    margin-bottom: 30px;
+}
+
+.enlace-social img {
+    width: 40px; /* Tamaño de los logos */
+    height: 40px;
+    filter: grayscale(100%); /* Efecto blanco y negro opcional */
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.enlace-social img:hover {
+    transform: scale(1.2); /* Crece al pasar el ratón */
+    filter: grayscale(0%); /* Recupera el color original al pasar el ratón */
+}
+
+/* --- TEXTO DE DERECHOS RESERVADOS --- */
+.info-legal {
+    width: 100%; /* Ocupa todo el ancho para poder alinear a la izquierda */
+    text-align: left; /* Alinea el texto a la izquierda */
+    border-top: 1px solid #eee; /* Línea divisoria muy fina */
+    padding-top: 20px;
+}
+
+.info-legal p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Reset básico para evitar espacios en blanco en los bordes */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal indeseado */
+}
+
+
+
+
+/* ---ADAPTACIÓN A OTROS FORMATOS--- */
+
+/* Estilos para tablets */
+@media (max-width: 1024px) {
+    .enlace-video {
+        flex: 0 0 calc(50% - 20px); /* Pasa de 4 videos a 2 por fila */
+    }
+    .grid-hashtags {
+        grid-template-columns: repeat(2, 1fr); /* Tendencias en 2 columnas */
+    }
+}
+
+
+/* --- REGLA PARA PANTALLAS PEQUEÑAS HEADER --- */
+@media (max-width: 600px) {
+    .bloque-celda {
+        font-size: 10px;    /* Tamaño mínimo de letra para que sea legible */
+        padding: 0 5px;
+    }
+    .logo-central img {
+        width: 60px;        /* Logo más pequeño en móvil */
+    }
+}
+
+/* Ajuste específico para móviles (iconos header) */
+@media (max-width: 600px) {
+    .grupo-iconos .material-symbols-outlined {
+        font-size: 20px; /* Tamaño fijo cómodo para el dedo en móviles */
+    }
+    .header-container {
+        padding: 10px 20px; /* Menos margen en los lados para ganar espacio */
+    }
+}
