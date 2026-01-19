@@ -270,6 +270,51 @@
 
 
 
+/* --- BOTON VOLVER --- */
+
+/* Contenedor para centrar el botón y darle espacio */
+.contenedor-volver {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0; /* Espacio arriba y abajo del botón */
+    background-color: transparent;
+}
+
+/* Estilo base del botón Naranja Claro */
+.boton-volver {
+    display: inline-block;
+    background-color: #ffcc80; /* Naranja claro inicial */
+    color: #333;               /* Color del texto oscuro para legibilidad */
+    padding: 15px 45px;        /* Tamaño del botón */
+    border-radius: 50px;       /* Bordes muy redondeados (estilo cápsula) */
+    text-decoration: none;     /* Quita el subrayado del enlace */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    border: 2px solid transparent;
+    
+    /* Transición suave para todos los cambios */
+    transition: all 0.4s ease; 
+    cursor: pointer;
+}
+
+/* EFECTOS AL PASAR EL RATÓN (HOVER) */
+.boton-volver:hover {
+    background-color: #bbdefb; /* Cambio a Azul Claro solicitado */
+    transform: scale(1.15);    /* Se agranda un 15% */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra suave para dar relieve */
+    color: #0d47a1;            /* Texto azul oscuro al cambiar fondo */
+}
+
+/* Efecto al hacer clic (opcional para feedback táctil) */
+.boton-volver:active {
+    transform: scale(1.05);    /* Se encoge ligeramente al pulsar */
+}
+
+
+
+
 
 
 
