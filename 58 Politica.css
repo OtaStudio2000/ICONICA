@@ -1,0 +1,366 @@
+/* --- HEADER ---*/ 
+
+/* --- CONTENEDOR DEL RECTÁNGULO AMARILLO --- */
+.header-container {
+    background-color: #ffeabe; 
+    margin: 10px 20px;         /* Margen externo para que el rectángulo no toque el borde del navegador */
+    padding: 15px 80px;       /* MARGEN LATERAL INTERNO: Esto separa CLIPSCHARTS e Iconos de los bordes */
+    border: 1px solid #823f3f;
+    box-sizing: border-box; 
+}
+
+/* Configuramos la "fila" de la tabla */
+.tabla-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 40px;
+    box-sizing: border-box;
+    list-style: none; /* Elimina puntos si usaste <ul> */
+}
+
+/* Cada celda de la tabla */
+.bloque-celda {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* ESTO QUITA EL PUNTO Y PONE LOS ICONOS EN FILA */
+.grupo-iconos {
+    display: flex;       /* Los pone uno al lado del otro */
+    gap: 15px;           /* Espacio entre la lupa y el usuario */
+    justify-content: flex-end; /* Los pega al borde derecho del header */
+}
+
+/* Quitamos cualquier decoración de lista que pueda venir de otro lado */
+.grupo-iconos a, .grupo-iconos span {
+    text-decoration: none;
+    list-style-type: none; /* Asegura que no haya puntos */
+    display: flex;
+    align-items: center;
+}
+
+/* Iconos de Google Material */
+.material-symbols-outlined {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Bloque 5: Contenedor de iconos */
+.grupo-iconos {
+    display: flex !important;
+    flex-direction: row !important; /* Siempre en horizontal */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 1vw; /* El espacio entre ellos también se encoge */
+    list-style: none !important;
+}
+
+/* Tamaño elástico de los iconos */
+.grupo-iconos .material-symbols-outlined {
+    /* La unidad 'vw' hace que el icono sea más pequeño si la ventana se estrecha */
+    font-size: 2vw; 
+    /* Ponemos un tamaño mínimo y máximo para que no desaparezcan ni sean gigantes */
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+/* Bloque del logo: le damos un poco más de importancia si quieres */
+.logo-central img {
+    height: auto;
+    max-width: 90%;         /* El logo también se hace pequeño con la celda */
+    width: 120px;           /* Tamaño máximo */
+}
+
+
+
+/* --- AJUSTES ICONOS COMO IMAGEN --- */
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+/*--- TIPOGRAFÍA ---*/
+body, text {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6/* añade aquí cualquier clase de título personalizada */{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+
+/* --- AJUSTES ICONOS GENERAL --- */
+
+/* Estilo para los enlaces de los iconos */
+.icon-link {
+    text-decoration: none; /* Quita el subrayado */
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+/* Tamaño de las imágenes de los iconos */
+.nav-icon {
+    width: 20px;  /* Ajusta según el tamaño que desees */
+    height: 20px;
+    transition: transform 0.2s; /* Efecto suave al pasar el ratón */
+}
+
+
+/* --- ESTILOS ESPECÍFICOS POLÍTICA DE PRIVACIDAD --- */
+
+.contenedor-legal {
+    padding: 20%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    min-height: 60vh; /* Para que el footer no suba demasiado si hay poco texto */
+}
+
+.caja-legal {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    padding: 40px;
+    margin-top: 30px;
+    text-align: left; /* El texto legal siempre es mejor leerlo a la izquierda */
+    line-height: 1.6; /* Mayor espacio entre líneas para lectura cómoda */
+}
+
+.caja-legal h3 {
+    text-align: left;
+    margin-top: 25px;
+    color: #222;
+    transition: transform 0.3s ease;
+}
+
+
+.caja-legal p {
+    margin-bottom: 15px;
+    color: #555;
+}
+
+/* Ajuste para que el botón de volver no herede márgenes extraños */
+.contenedor-legal .boton-comunidad {
+    margin-top: 40px;
+    width: auto; /* Que se ajuste al texto "Volver al inicio" */
+    display: inline-flex;
+}
+
+/* --- BOTÓN VOLVER ARRIBA --- */
+.boton-subir {
+    position: fixed;         /* Se queda fijo en la pantalla */
+    bottom: 30px;            /* Distancia desde abajo */
+    right: 30px;             /* Distancia desde la derecha */
+    width: 50px;
+    height: 50px;
+    background-color: #333;  /* Color del botón */
+    color: #fff;             /* Color de la flecha */
+    border-radius: 50%;      /* Forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1000;           /* Asegura que esté por encima de todo */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.boton-subir:hover {
+    background-color: #000;  /* Se oscurece al pasar el ratón */
+    transform: translateY(-5px); /* Sube un poquito al pasar el ratón */
+}
+
+/* Ajuste del icono dentro del botón */
+.boton-subir .material-symbols-outlined {
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* EFECTO SUAVE AL SUBIR */
+html {
+    scroll-behavior: smooth; /* Hace que toda la página suba suavemente, no de golpe */
+}
+.caja-privacidad {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 30px;
+    text-align: left;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caja-privacidad h3 {
+    text-align: left; /* Alineado a la izquierda para lectura legal */
+    margin-top: 30px;
+    color: #222;
+}
+
+.bloque-celda a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+    font-weight: normal;
+}
+
+.bloque-celda a:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+/* --- CONTENEDOR DEL FOOTER --- */
+.footer-personalizado {
+    width: 100vw;           /* Ocupa el 100% del ancho de la ventana */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;     /* Estos márgenes negativos lo estiran hacia los lados */
+    margin-right: -50vw;
+    margin-top: 50px; /* Crea el espacio arriba del footer */
+    background-color: #ff99f2; /* Tu color rosa */
+        padding: 40px 0;
+}
+
+.contenido-centrado-footer {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+/* --- LOGOS DE REDES SOCIALES --- */
+.redes-sociales {
+    display: flex;
+    gap: 25px; /* Espacio entre logos */
+    margin-bottom: 30px;
+}
+
+.enlace-social img {
+    width: 40px; /* Tamaño de los logos */
+    height: 40px;
+    filter: grayscale(100%); /* Efecto blanco y negro opcional */
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.enlace-social img:hover {
+    transform: scale(1.2); /* Crece al pasar el ratón */
+    filter: grayscale(0%); /* Recupera el color original al pasar el ratón */
+}
+
+/* --- TEXTO DE DERECHOS RESERVADOS --- */
+.info-legal {
+    width: 100%; /* Ocupa todo el ancho para poder alinear a la izquierda */
+    text-align: left; /* Alinea el texto a la izquierda */
+    border-top: 1px solid #eee; /* Línea divisoria muy fina */
+    padding-top: 20px;
+}
+
+.info-legal p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Reset básico para evitar espacios en blanco en los bordes */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Evita el scroll horizontal indeseado */
+}
+
+
+/* Responsivo para el texto legal */
+@media (max-width: 768px) {
+    .caja-legal {
+        padding: 20px;
+        border-radius: 15px;
+        margin: 20px 10px;
+    }
+    
+    .contenedor-legal h1 {
+        font-size: 28px;
+    }
+}
+
+
+/* ---ADAPTACIÓN A OTROS FORMATOS--- */
+
+/* Estilos para tablets */
+@media (max-width: 1024px) {
+    .enlace-video {
+        flex: 0 0 calc(50% - 20px); /* Pasa de 4 videos a 2 por fila */
+    }
+    .grid-hashtags {
+        grid-template-columns: repeat(2, 1fr); /* Tendencias en 2 columnas */
+    }
+}
+
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .grid-hashtags {
+        grid-template-columns: repeat(2, 1fr); /* En móviles pasa a 2 columnas */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-hashtags {
+        grid-template-columns: 1fr; /* En móviles muy pequeños 1 columna */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-titulo-principal h1 {
+        font-size: 40px; /* Reduce el título "DESCUBRE" para que no se corte */
+    }
+    .enlace-video {
+        flex: 0 0 100%; /* Un video por fila */
+    }
+    
+    .cabecera-seccion {
+        flex-direction: column; /* El título y "Ver todo" se apilan verticalmente */
+        align-items: flex-start;
+    }
+}
+
+/* --- REGLA PARA PANTALLAS PEQUEÑAS HEADER --- */
+@media (max-width: 600px) {
+    .bloque-celda {
+        font-size: 10px;    /* Tamaño mínimo de letra para que sea legible */
+        padding: 0 5px;
+    }
+    .logo-central img {
+        width: 60px;        /* Logo más pequeño en móvil */
+    }
+}
+
+/* Ajuste específico para móviles (iconos header) */
+@media (max-width: 600px) {
+    .grupo-iconos .material-symbols-outlined {
+        font-size: 20px; /* Tamaño fijo cómodo para el dedo en móviles */
+    }
+    .header-container {
+        padding: 10px 20px; /* Menos margen en los lados para ganar espacio */
+    }
+    }
