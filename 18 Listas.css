@@ -89,32 +89,140 @@
 }
 
 
+
+
+
+
+
 /* --- TITULO DE SECCIÓN --- */
 
 /* Espacio del título */
 .contenedor-titulo-principal {
-    width: 100%;           /* Ocupa todo el ancho */
-    padding: 80px 0;       /* Mucho espacio arriba y abajo para que esté "a parte" */
-    display: flex;         /* Usamos flexbox para centrarlo */
-    justify-content: center; 
-    align-items: center;
+    width: 100%;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
-/* Estilo del texto del título */
 .contenedor-titulo-principal h1 {
-    font-size: 80px;       /* Tamaño muy grande */
-    font-weight: bold;     /* Negrita */
-    letter-spacing: 5px;   /* Espaciado entre letras para un toque moderno */
-    text-transform: uppercase; /* Asegura que esté en mayúsculas */
-    margin: 0;             /* Quitamos márgenes por defecto */
-    color: #000;           /* Color negro puro */
+    font-size: clamp(40px, 8vw, 80px); /* CLAMP: Se escala entre 40px y 80px automáticamente */
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin: 0;
+    color: #000;
+    line-height: 1.1;
+    text-align: center;
 }
 
 
 
 
+/* --- CONTENDEDORES INDIVIDUALES ---*/
+
+/* LO MAS VISTO */
+.contenedor-lo-mas-visto {
+    background-color: #ff9d9d; /* Color de fondo del rectángulo */
+    padding: 40px 20px;       /* Espacio interno */
+    margin: 20px 0;           /* Espacio entre otras secciones */
+    border-radius: 0;         /* Bordes totalmente rectos */
+    width: 100%;              /* Ocupa todo el ancho */
+}
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-lo-mas-visto {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-lo-mas-visto h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-lo-mas-visto {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-lo-mas-visto h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
 
 
+
+/* --- NOVEDADES --- */
+.contenedor-novedades {
+    background-color: #bcff9d; /* Color de fondo del rectángulo */
+    padding: 40px 20px;       /* Espacio interno */
+    margin: 20px 0;           /* Espacio entre otras secciones */
+    border-radius: 0;         /* Bordes totalmente rectos */
+    width: 100%;              /* Ocupa todo el ancho */
+}
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-novedades {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-novedades h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+/* --- ENTREVISTAS --- */
+.contenedor-entrevistas {
+    background-color: #9dfcff; /* Color de fondo del rectángulo */
+    padding: 40px 20px;       /* Espacio interno */
+    margin: 20px 0;           /* Espacio entre otras secciones */
+    border-radius: 0;         /* Bordes totalmente rectos */
+    width: 100%;              /* Ocupa todo el ancho */
+}
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-entrevistas {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-entrevistas h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+/* --- CRÍTICAS --- */
+.contenedor-criticas {
+    background-color: #f49dff; /* Color de fondo del rectángulo */
+    padding: 40px 20px;       /* Espacio interno */
+    margin: 20px 0;           /* Espacio entre otras secciones */
+    border-radius: 0;         /* Bordes totalmente rectos */
+    width: 100%;              /* Ocupa todo el ancho */
+}
+
+/* Contenedor interno para centrar el contenido */
+.seccion-contenido-criticas {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-contenido-criticas h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+
+/* --- AJUSTES GENERALES DE LAS SECCIONES --- */
 
 /* Carrusel */
 .carrusel {
@@ -155,11 +263,11 @@
 
 /* Estilo de los enlaces/imágenes */
 .enlace-video {
-    flex: 0 0 calc(33.333% - 17px); /* Corregido también aquí para 3 videos */
-    min-width: 250px; 
-    aspect-ratio: 16 / 9; 
-    background-color: #f0f0f0;
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* Mantiene formato rectangular de video */
     overflow: hidden;
+    background-color: #ddd; /* Color de carga si no hay imagen */
 }
 
 .enlace-video img {
@@ -174,6 +282,123 @@
 .enlace-video img:hover {
     opacity: 0.8; /* Se oscurece un poco al poner el ratón encima */
 }
+
+/* Contenedor que alinea el título y el Ver todo */
+.cabecera-seccion {
+    display: flex;
+    justify-content: space-between; /* Empuja el título a la izquierda y el link a la derecha */
+    align-items: center;            /* Alinea verticalmente al centro */
+    width: 100%;                    /* Ocupa todo el ancho disponible */
+    padding: 0 10px;                /* Pequeño margen interno para que no toque los bordes */
+    box-sizing: border-box;         /* Asegura que el padding no rompa el diseño */
+    flex-wrap: wrap;                /* Permite que si no hay espacio, baje de línea en móviles muy pequeños */
+}
+
+.cabecera-seccion h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Estilo texto "Ver todo" */
+.enlace-ver-todo {
+    text-decoration: none;         /* Quita el subrayado */
+    color: #666;                   /* Color grisáceo */
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+    white-space: nowrap;            /* Evita que la frase "Ver todo" se parta en dos líneas */
+    margin-left: 10px;              /* Espacio mínimo respecto al título */
+}
+
+.enlace-ver-todo:hover {
+    color: #000;                   /* Se oscurece al pasar el ratón */
+    text-decoration: underline;    /* Opcional: aparece subrayado al pasar el ratón */
+}
+
+.enlace-video {
+    /* Calculamos el ancho para que se vean 4 exactamente */
+    /* 100% dividido entre 4, menos el margen del gap */
+    flex: 0 0 calc(25% - 19px); 
+    min-width: 250px; /* Para que no se hagan diminutos en pantallas pequeñas */
+    aspect-ratio: 16 / 9; /* Mantiene el formato cine/TV */
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+
+.enlace-video img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Esto hace que la imagen llene el cuadro sin deformarse */
+    display: block;
+}
+
+/* Estilo botones de flecha */
+.flecha-lateral {
+    font-size: 40px; /* Flechas más grandes */
+    color: #333;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+}
+
+.flecha-lateral:hover {
+    transform: scale(1.2);
+}
+
+/* Estilo flechas laterales */
+.flecha-lateral {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;     /* Tamaño de la flecha */
+    font-weight: bold;
+    padding: 10px;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.flecha-lateral:hover {
+    color: #000;
+    transform: scale(1.2); /* Crece un poco al pasar el ratón */
+}
+
+
+
+
+
+/* --- AJUSTES ICONOS COMO IMAGEN --- */
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+
+/* --- AJUSTES ICONOS GENERAL --- */
+
+/* Estilo para los enlaces de los iconos */
+.icon-link {
+    text-decoration: none; /* Quita el subrayado */
+    display: flex;
+    align-items: center;
+}
+
+/* Tamaño de las imágenes de los iconos */
+.nav-icon {
+    width: 20px;  /* Ajusta según el tamaño que desees */
+    height: 20px;
+    transition: transform 0.2s; /* Efecto suave al pasar el ratón */
+}
+
+/* Efecto visual al pasar el ratón (hover) */
+.nav-icon:hover {
+    transform: scale(1.1); /* Hace que el icono crezca un poquito */
+}
+
 
 /* --- BOTÓN VOLVER ARRIBA --- */
 .boton-subir {
@@ -224,7 +449,7 @@ html {
     margin-right: -50vw;
     margin-top: 50px; /* Crea el espacio arriba del footer */
     background-color: #ff99f2; /* Tu color rosa */
-        padding: 40px 0;
+    padding: 40px 0;
 }
 
 .contenido-centrado-footer {
@@ -280,30 +505,57 @@ html, body {
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* ---ADAPTACIÓN A OTROS FORMATOS--- */
 
 /* Estilos para tablets */
 @media (max-width: 1024px) {
-    .enlace-video {
-        flex: 0 0 calc(50% - 20px); /* Pasa de 4 videos a 2 por fila */
+    .grid-videos {
+        grid-template-columns: repeat(2, 1fr); /* De 4 pasa a 2 columnas */
     }
+    
     .grid-hashtags {
-        grid-template-columns: repeat(2, 1fr); /* Tendencias en 2 columnas */
+        grid-template-columns: repeat(2, 1fr); /* De 4 pasa a 2 columnas */
+    }
+    
+    .contenedor-titulo-principal h1 {
+        font-size: 60px; /* Reducimos título */
     }
 }
 
+/* Estilos para móviles */
+@media (max-width: 768px) {
+    .grid-hashtags {
+        grid-template-columns: repeat(2, 1fr); /* En móviles pasa a 2 columnas */
+    }
+}
 
-/* --- REGLA PARA PANTALLAS PEQUEÑAS HEADER --- */
+@media (max-width: 480px) {
+    .grid-hashtags {
+        grid-template-columns: 1fr; /* En móviles muy pequeños 1 columna */
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor-titulo-principal h1 {
+        font-size: 40px; /* Reduce el título "DESCUBRE" para que no se corte */
+    }
+    .enlace-video {
+        flex: 0 0 100%; /* Un video por fila */
+    }
+    
+    .cabecera-seccion {
+        flex-direction: column; /* El título y "Ver todo" se apilan verticalmente */
+        align-items: flex-start;
+    }
+}
+
+.grid-videos {
+        gap: 15px;
+    }
+
+    
+
+/* --- REGLA PARA PANTALLAS PEQUEÑAS --- */
 @media (max-width: 600px) {
     .bloque-celda {
         font-size: 10px;    /* Tamaño mínimo de letra para que sea legible */
@@ -315,7 +567,8 @@ html, body {
 }
 
 /* Ajuste específico para móviles (iconos header) */
-@media (max-width: 600px) {
+@media (max-width: 480px) {
+    /* Header: Layout cambia */
     .grupo-iconos .material-symbols-outlined {
         font-size: 20px; /* Tamaño fijo cómodo para el dedo en móviles */
     }
